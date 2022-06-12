@@ -10,7 +10,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "repository": {
     "type": "git",
@@ -50,6 +51,7 @@
     "@types/react": "^16.7.17",
     "@types/react-helmet": "^5.0.7",
     "@types/react-leaflet": "^2.2.1",
+    "gh-pages": "^4.0.0",
     "prettier": "^1.15.2",
     "rimraf": "^2.6.3",
     "typescript": "^3.2.2"
