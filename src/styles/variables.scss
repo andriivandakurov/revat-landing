@@ -1,0 +1,20 @@
+$mobile: 767;
+$tablet: 1023;
+$desktop: 1199;
+
+$black: #000;
+$almost-black: #0b0c0e;
+$white: #fff;
+
+$light-grey: #f7f5ef;
+$red: #d10500;
+
+$content-max-with: 1160px;
+
+$staff-padding: 20px;
+$staff-width: 37.5;
+
+$mediaQueryMobile: 'only screen and (max-width : 768px)';
+$mediaQueryTablet: 'only screen and (max-width : 414px) and (min-width : 992px)';
+$mediaQueryDesktop: 'only screen and (max-width : 1200px) and (min-width : 992px)';
+$mediaQueryLargeDesktop: 'only screen and (min-width : 1200px)';

@@ -1,0 +1,63 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.button {
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 230px;
+    height: 35px;
+    transform: skew(-20deg);
+    background: $red;
+
+    @include mobile {
+      width: 170px;
+      height: 28px;
+    }
+  }
+
+  span {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    font-size: 1.15rem;
+
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 1.8px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 0.85rem;
+    }
+  }
+
+  .tail {
+    position: absolute;
+    bottom: -19px;
+    left: -58px;
+    width: 100px;
+    height: 30px;
+    background: url('../../images/button-tail.png');
+    background-position: top right;
+  }
+}

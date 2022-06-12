@@ -1,0 +1,30 @@
+@import '../../styles/mixins.scss';
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  li {
+    margin: 0 11px;
+  }
+}
+
+.open {
+  @include mobile {
+    .socials {
+      display: flex;
+      position: fixed;
+      right: 40px;
+      z-index: 200;
+    }
+  }
+}
+
+.footer {
+  @include mobile {
+    .socials {
+      display: flex;
+    }
+  }
+}

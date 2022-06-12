@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.contacts {
+  padding: 80px 0;
+  background-color: $almost-black;
+  background-image: url('../../images/magnesia-efect.png');
+  background-size: cover;
+  background-position: top center;
+  color: $light-grey;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    @include mobile {
+      max-width: 360px;
+    }
+  }
+
+  .information {
+    line-height: 1.71;
+    font-weight: 500;
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 80px;
+      order: 1;
+
+      .working-hours,
+      .address-block {
+        flex: 1 0 50%;
+        text-align: center;
+      }
+
+      h3 {
+        @include tablet {
+          flex: 1 0 100%;
+          text-align: center;
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+
+  .form-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  h3 {
+    margin: 0 0 84px 0;
+    text-align: left;
+    line-height: 1.2;
+    letter-spacing: 2px;
+  }
+
+  h5 {
+    margin: 0 0 26px 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    text-transform: none;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  p {
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-bottom: 59px;
+  }
+}

@@ -1,0 +1,46 @@
+@import './variables.scss';
+
+@mixin font-styles($size: false, $lh: false, $weight: false, $ls: false) {
+  @if $size {
+    font-size: $size + px;
+  }
+  @if $lh {
+    line-height: $lh + px;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $ls {
+    letter-spacing: $ls + px;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile + px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet + px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: $desktop + px) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media screen and (min-width: $desktop + 1px) {
+    @content;
+  }
+}
+
+@function get-image-wrap-width($outer-col-percentage) {
+  @return calc(
+    (100% + #{$staff-padding} * 2) * (1 - 25 / #{$outer-col-percentage})
+  );
+}

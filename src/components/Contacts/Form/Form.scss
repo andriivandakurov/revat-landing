@@ -1,0 +1,92 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+
+  @include mobile {
+    max-width: 360px;
+  }
+
+  .field {
+    margin-bottom: 29px;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.error {
+      input {
+        border-color: $red;
+      }
+
+      span {
+        font-size: 0.8rem;
+        padding: 1px 8px;
+        color: $red;
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    left: 20px;
+    top: 20px;
+    transition: 0.1s ease-in-out all;
+    background: $almost-black;
+    padding: 0 8px;
+    font-size: 1.14rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+  }
+
+  input {
+    padding: 18px 19px;
+    box-sizing: border-box;
+    border: 1px solid $light-grey;
+    background: $almost-black;
+    color: $light-grey;
+    width: 100%;
+    font-size: 1.14rem;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+
+    &:focus + label,
+    &:not(:focus):valid + label {
+      top: -5px;
+      left: 15px;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
+
+  button {
+    margin-top: 63px;
+    align-self: center;
+
+    @include mobile {
+      margin-top: 30px;
+    }
+  }
+
+  h3 {
+    font-size: 4.28rem;
+    margin-bottom: 58px;
+    color: $red;
+    line-height: 1.02;
+    letter-spacing: 3px;
+
+    @include mobile {
+      margin-bottom: 29px;
+      text-align: center;
+      font-size: 1.71rem;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../styles/mixins.scss';
+
+.map {
+  width: 100%;
+  height: 350px;
+  z-index: 0;
+
+  @include mobile {
+    height: 250px;
+  }
+
+  .leaflet-control-zoom {
+    display: none;
+  }
+
+  .leaflet-control-attribution {
+    display: none;
+  }
+}

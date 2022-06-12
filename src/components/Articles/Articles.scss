@@ -1,0 +1,209 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.articles {
+  color: black;
+  padding: 120px 0;
+  background-color: $light-grey;
+
+  @include tablet {
+    padding: 100px 0;
+  }
+
+  @include mobile {
+    padding: 80px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      max-width: 320px;
+    }
+  }
+
+  .article-content {
+    display: flex;
+    flex-direction: row;
+
+    @include desktop {
+      flex-direction: column;
+    }
+  }
+
+  .bottom,
+  .top {
+    position: relative;
+    width: 100%;
+  }
+
+  .top {
+    &:before,
+    &:after {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+    }
+
+    &:before {
+      top: -16px;
+      left: -40px;
+      border-top: 4px solid $red;
+      border-left: 4px solid $red;
+
+      @include desktop {
+        left: -20px;
+      }
+
+      @include mobile {
+        left: -20px;
+      }
+    }
+
+    &:after {
+      top: -16px;
+      right: -40px;
+      border-top: 4px solid $red;
+      border-right: 4px solid $red;
+
+      @include desktop {
+        right: -20px;
+      }
+
+      @include mobile {
+        right: -20px;
+      }
+    }
+  }
+
+  .bottom {
+    &:before,
+    &:after {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+    }
+
+    &:before {
+      bottom: -27px;
+      left: -40px;
+      border-bottom: 4px solid $red;
+      border-left: 4px solid $red;
+
+      @include desktop {
+        left: -20px;
+      }
+
+      @include mobile {
+        left: -20px;
+      }
+    }
+
+    &:after {
+      bottom: -27px;
+      right: -40px;
+      border-bottom: 4px solid $red;
+      border-right: 4px solid $red;
+
+      @include desktop {
+        right: -20px;
+      }
+
+      @include mobile {
+        right: -20px;
+      }
+    }
+  }
+
+  .information {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .address-block {
+      line-height: 1.5;
+      letter-spacing: 0.1px;
+    }
+  }
+
+  img {
+    max-width: 600px;
+    width: 100%;
+    height: 100%;
+    margin-right: 100px;
+
+    @include desktop {
+      margin: auto;
+    }
+  }
+
+  h4 {
+    margin: 0 40px 40px 40px;
+
+    @include mobile {
+      margin: 0 20px 20px;
+    }
+  }
+
+  p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: $almost-black;
+
+    @include desktop {
+      text-align: center;
+      padding: 0 40px;
+    }
+
+    @include mobile {
+      padding: 0;
+      font-size: 0.85rem;
+    }
+  }
+
+  .classic-button {
+    background-color: $red;
+    font-size: 1.3rem;
+    font-weight: 900;
+    line-height: 1.28;
+    letter-spacing: 0.9px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 17px 38px;
+    border-radius: 3px;
+    align-self: flex-start;
+    margin-top: 58px;
+
+    display: none; // temp
+
+    @include desktop {
+      margin: 40px auto 0;
+    }
+
+    @include mobile {
+      margin: 20px auto 0;
+      font-size: 1rem;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}

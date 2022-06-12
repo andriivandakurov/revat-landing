@@ -1,0 +1,21 @@
+.scroll-top-button {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  max-width: 51px;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 150ms ease-in-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  img {
+    width: 100%;
+  }
+}
