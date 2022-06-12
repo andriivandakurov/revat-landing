@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/revat-landing",
   siteMetadata: {
     title: 'Revat',
     description: 'Revat Hard Total Gym',
