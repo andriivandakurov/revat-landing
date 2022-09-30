@@ -169,6 +169,20 @@ h5 {
     }
   }
 
+  p {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #0b0c0e;
+  }
+
+  .advantages-team-photo-container img{
+    max-width: 100%;
+    margin-bottom: 4em;
+  }
+
   &-list {
     display: flex;
     flex-direction: row;
@@ -361,10 +375,12 @@ h5 {
 
   .gallery-image-1 {
     margin-top: 58px;
+    max-width: 355px;
   }
 
   .gallery-image-2 {
     margin: 0 40px;
+    max-width: 350px;
 
     @include tablet {
       margin: 0 30px;
@@ -389,6 +405,7 @@ h5 {
 
   .gallery-image-5 {
     margin: 0 40px;
+    max-width: 257px;
 
     @include tablet {
       margin: 0 30px;
@@ -397,6 +414,7 @@ h5 {
 
   .gallery-image-6 {
     margin-top: 40px;
+    max-width: 485px;
 
     @include tablet {
       margin-top: 30px;
@@ -502,7 +520,7 @@ h5 {
 
   &-item-container {
     position: relative;
-    max-width: 240px;
+    max-width: 330px;
 
     img {
       width: 100%;
@@ -715,13 +733,17 @@ h5 {
       &.staff-7 {
         flex-direction: row;
         align-items: flex-start;
-        max-width: percentage($staff-width) / 100;
+        max-width: 67%;
         top: 34px;
 
         .staff-item-data {
           padding-left: 15px;
           padding-top: 125px;
           max-width: get-image-wrap-width($staff-width);
+        }
+
+        .staff-item-image-wrapper {
+          margin-top: 110px;
         }
 
         .staff-item-label {
@@ -769,6 +791,10 @@ h5 {
           left: 10px;
           bottom: -46px;
         }
+      }
+
+      &.class-1, &.class-2, &.class-4 {
+        max-width: 33%;
       }
 
       &.class-4 {

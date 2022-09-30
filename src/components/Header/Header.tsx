@@ -7,6 +7,7 @@ import SocialLinks from '../SocialLinks/SocialLinks'
 
 import CloseIcon from '../../images/close.svg'
 import MenuIcon from '../../images/menu.svg'
+import phoneIcon from '../../images/social-icons/phone-icon.svg'
 
 const Header = () => {
   const [isOpen, toogleNav] = React.useState(false)
@@ -58,6 +59,11 @@ const Header = () => {
           <a href="#contacts">Контакти</a>
         </li>
       </ul>
+
+      <a href="tel:+380934277353" className="contact-phone">
+        <object data={phoneIcon} type="image/svg+xml" />
+        +380934277353
+      </a>
 
       <SocialLinks />
     </header>
