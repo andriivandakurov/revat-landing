@@ -1,11 +1,13 @@
 import './ButtonMarkup.scss'
 import * as React from 'react'
 
-const ButtonMarkup: React.SFC<{}> = ({ children }) => {
+const ButtonMarkup: React.SFC<{
+  onClick?: MouseEventHandler<HTMLDivElement>
+}> = ({ children, onClick = () => {} }) => {
   return (
-    <div className='button'>
+    <div className="button" onClick={onClick}>
       <span>{children}</span>
-      <div className='tail' />
+      <div className="tail" />
     </div>
   )
 }
