@@ -29,6 +29,7 @@ import StaffImage4 from '../images/staff/4.jpg'
 import ClassImage1 from '../images/class/1.jpg'
 import ClassImage2 from '../images/class/2.jpg'
 import ClassImage3 from '../images/class/IMG_7845.jpg'
+import ClassImage4 from '../images/class/mobility.jpg'
 
 import GymVideoMp4 from '../videos/squat-it.mp4'
 import Carousel, { CarouselItem } from '../components/Carousel/Carousel'
@@ -230,7 +231,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   <span>60 хвилин &#8226; 250 грн/заняття</span>
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={ClassImage1} />
+                  <Image src={ClassImage4} />
                 </div>
               </div>
               <div className="staff-item-data">
