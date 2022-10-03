@@ -14,6 +14,8 @@ import ImageGallery from '../components/ImageGallery/ImageGallery'
 
 import ColorLogo from '../images/color-logo.png'
 import RevatTeam from '../images/advantages/revat-team.jpg'
+import RevatTeam2 from '../images/advantages/revat-team_2.jpg'
+import RevatTeam3 from '../images/advantages/revat-team_3.jpg'
 // import WeightIcon from '../images/advantages/weight.png'
 // import HeartIcon from '../images/advantages/heart.png'
 // import LightningIcon from '../images/advantages/lightning.png'
@@ -29,6 +31,7 @@ import ClassImage2 from '../images/class/2.jpg'
 import ClassImage3 from '../images/class/IMG_7845.jpg'
 
 import GymVideoMp4 from '../videos/squat-it.mp4'
+import Carousel, { CarouselItem } from '../components/Carousel/Carousel'
 
 const IndexPage: React.SFC<{}> = (props): JSX.Element => {
   return (
@@ -78,7 +81,17 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
           <h3 className="red">REVAT - велика кросфіт сім'я</h3>
 
           <div className="advantages-team-photo-container">
-            <Image src={RevatTeam} />
+            <Carousel>
+              <CarouselItem>
+                <img src={RevatTeam} />
+              </CarouselItem>
+              <CarouselItem>
+                <img src={RevatTeam2} />
+              </CarouselItem>
+              <CarouselItem>
+                <img src={RevatTeam3} />
+              </CarouselItem>
+            </Carousel>
           </div>
           <p>
             REVAT - перший кросфіт зал у Львові. Наша команда - професійні,
@@ -200,10 +213,12 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                 </div>
               </div>
               <div className="staff-item-data">
-                Щотижнева група яка у нас проходить по суботам. Даний напрямок
-                для тих, хто хоче опанувати навики та покращити техніку у
-                олімпійському виді спорту. Вправи зі штангою не будуть здаватись
-                такими складними під чітким керівництвом нашого тренера!
+                Щотижневий авторський клас який у нас проходить по суботам.
+                Даний напрямок для тих, хто хоче поглиблено вивчити вправи які
+                ми використовуємо у наших тренуваннях а також навчитись
+                піднімати важкі ваги як круті атлети на відосиках. Вправи зі
+                штангою не будуть здаватись такими складними під чітким
+                керівництвом нашого тренера!
               </div>
             </div>
           </div>
@@ -219,10 +234,12 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                 </div>
               </div>
               <div className="staff-item-data">
-                Безліч атлетів нашого залу приймають участь у даній гонці та
-                виступають все краще і краще! Підйом по канату чи вибігання на
-                рампу будуть нескладними якщо ти довіриш свою підготовку
-                професіоналам!
+                Авторський клас, на якому ми прагнемо покращити гнучкість наших
+                м'язів а також мобільність суглобів і звісно додатково ми
+                працюємо, над закачуванням проблемних зон, які є у більшості
+                людей! Для кого підійде? абсолютно для всіх, від новачка до
+                професійного спортсмена, strongly recommended для людей із
+                "сидячою" роботою!
               </div>
             </div>
             {/* <div className="staff-item class-5">
@@ -291,7 +308,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
 
           <a href="#contacts">
             <ButtonMarkup>
-              безкоштовне <br /> тренування
+              Записатись на безкоштовне <br /> тренування
             </ButtonMarkup>
           </a>
         </div>
