@@ -38,8 +38,18 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
   return (
     <>
       <SEO
-        title="Crossfit Lviv"
-        keywords={['Revat', 'Revat Gym', 'Revat Hard Total']}
+        keywords={[
+          'кросфіт',
+          'кросфіт Львів',
+          'кроссфіт',
+          'заняття з кросфіту',
+          'crossfit',
+          'crosfit',
+          'кросфіт тренування',
+          'зал для кросфіту',
+          'Revat',
+          'Реват',
+        ]}
       />
 
       <section className="main-screen">
