@@ -169,7 +169,12 @@ h5 {
     }
   }
 
-  p {
+  h1, p {
+    display: inline;
+    text-transform: none;
+  }
+
+  p, h1 {
     font-size: 1.15rem;
     font-weight: 500;
     line-height: 1.75;
