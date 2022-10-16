@@ -10,5 +10,5 @@ export interface SeoProps {
   lang?: string
   meta?: Meta[]
   keywords: string[]
-  title: string
+  title?: string
 }
