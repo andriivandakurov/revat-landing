@@ -490,7 +490,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
             {[
               {
                 sectionName: 'OpenGym',
-                describe: 'Cамостійне тренування без тренера',
+                description: 'Cамостійне тренування без тренера',
                 options: [
                   {
                     name: 'Безлім',
@@ -529,7 +529,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               },
               {
                 sectionName: 'Спліти',
-                describe: 'Група до 4 людей, гнучкий графік',
+                description: 'Група до 4 людей, гнучкий графік',
                 options: [
                   {
                     name: '10 занять',
@@ -554,7 +554,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               },
               {
                 sectionName: 'Персональні тренування',
-                describe:
+                description:
                   'Тільки ти, тренер і слабкі сторони, над якими ви працюєте',
                 options: [
                   {
@@ -615,10 +615,10 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               <div className="section">
                 <h5>
                   {section.sectionName}:
-                  {section.describe && (
-                    <div className="describe">
+                  {section.description && (
+                    <div className="description">
                       <div className="icon">?</div>
-                      <div className="text">{section.describe}</div>
+                      <div className="text">{section.description}</div>
                     </div>
                   )}
                 </h5>
