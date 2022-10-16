@@ -490,6 +490,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
             {[
               {
                 sectionName: 'OpenGym',
+                describe: 'Cамостійне тренування без тренера',
                 options: [
                   {
                     name: 'Безлім',
@@ -528,6 +529,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               },
               {
                 sectionName: 'Спліти',
+                describe: 'Група до 4 людей, гнучкий графік',
                 options: [
                   {
                     name: '10 занять',
@@ -552,6 +554,8 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               },
               {
                 sectionName: 'Персональні тренування',
+                describe:
+                  'Тільки ти, тренер і слабкі сторони, над якими ви працюєте',
                 options: [
                   {
                     name: '10 занять',
@@ -609,7 +613,15 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               },
             ].map(section => (
               <div className="section">
-                <h5>{section.sectionName}:</h5>
+                <h5>
+                  {section.sectionName}:
+                  {section.describe && (
+                    <div className="describe">
+                      <div className="icon">?</div>
+                      <div className="text">{section.describe}</div>
+                    </div>
+                  )}
+                </h5>
 
                 {section.options.map(option => (
                   <div className="pice-list-row">
