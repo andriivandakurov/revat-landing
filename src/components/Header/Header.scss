@@ -31,6 +31,8 @@
       display: block;
       align-self: flex-start;
       max-width: 35px;
+      min-width: 35px;
+      padding-top: 2.5px;
       cursor: pointer;
       z-index: 200;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -52,8 +54,6 @@
 
     visibility: hidden; // temp
     position: absolute; // temp
-    clip: rect(1px 1px 1px 1px); // temp
-    clip: rect(1px, 1px, 1px, 1px); // temp
 
     @include mobile {
       display: none;
@@ -108,5 +108,10 @@
         background: $almost-black;
       }
     }
+  }
+
+  @include small_mobile {
+    margin-left: -27.5px;
+    margin-right: -27.5px;
   }
 }
