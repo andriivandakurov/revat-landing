@@ -15,6 +15,12 @@
   }
 }
 
+@mixin small_mobile {
+  @media screen and (max-width: $small_mobile + px) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media screen and (max-width: $mobile + px) {
     @content;

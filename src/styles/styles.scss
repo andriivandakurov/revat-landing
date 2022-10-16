@@ -169,12 +169,14 @@ h5 {
     }
   }
 
-  h1, p {
+  h1,
+  p {
     display: inline;
     text-transform: none;
   }
 
-  p, h1 {
+  p,
+  h1 {
     font-size: 1.15rem;
     font-weight: 500;
     line-height: 1.75;
@@ -363,6 +365,10 @@ h5 {
     .button {
       width: 230px;
       margin: 10px auto 0;
+
+      @include mobile {
+        width: 170px;
+      }
     }
   }
   .row {
@@ -911,6 +917,7 @@ h5 {
 
     .section {
       margin-top: 10px;
+      max-width: 300px;
     }
 
     h5 {
