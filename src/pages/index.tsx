@@ -565,9 +565,16 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                     name: 'Разове заняття',
                     price: 450,
                   },
-                  {
-                    name: 'в сертифікованого тренера з кросфіту CF lvl2',
-                  },
+                ],
+              },
+              {
+                sectionName: (
+                  <span>
+                    Персональні тренування в сертифікованого тренера з кросфіту
+                    CF&nbsp;lvl2
+                  </span>
+                ),
+                options: [
                   {
                     name: '10 занять',
                     price: 5000,
@@ -652,7 +659,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               details: [
                 {
                   days: ['Субота'],
-                  hours: ['10:00'],
+                  hours: ['10:00', '12:00'],
                 },
               ],
             },
