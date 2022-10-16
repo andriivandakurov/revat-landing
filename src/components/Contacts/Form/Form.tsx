@@ -43,7 +43,7 @@ const Form: React.SFC<{}> = () => {
             method="POST"
             onSubmit={handleSubmit}
           >
-            <h3>Безкоштовне треннування</h3>
+            <h3>Записатись на безкоштовне треннування</h3>
 
             <input type="hidden" name="_next" value={values._next} />
 

@@ -1,8 +1,8 @@
 module.exports = {
   pathPrefix: "/revat-landing",
   siteMetadata: {
-    title: 'Revat',
-    description: 'Revat Hard Total Gym',
+    title: 'REVAT – спеціалізований кросфіт зал. Групові та індивідуальні заняття',
+    description: 'Групові та індивідуальні заняття з кросфіту для новачків та професіоналів. Ранкові та вечірні заняття. Сертифіковані тренери, крута атмосфера, індивідуальний підхід. Перше заняття безкоштовне',
     author: 'hello@teonica.com',
   },
   plugins: [

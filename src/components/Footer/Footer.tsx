@@ -11,7 +11,7 @@ const Footer: React.SFC<{}> = () => {
         <SocialLinks />
         <ul className="footer-navigation">
           <li>
-            <a href="#classes">Класи</a>
+            <a href="#classes">Тренування</a>
           </li>
           <li>
             <a href="#gallery">Галерея</a>
@@ -20,10 +20,13 @@ const Footer: React.SFC<{}> = () => {
             <a href="#coaches">Тренери</a>
           </li>
           <li>
-            <a href="#blog">Блог</a>
+            <a href="#contacts">Контакти</a>
           </li>
           <li>
-            <a href="#contacts">Контакти</a>
+            <a href="#price">Ціни</a>
+          </li>
+          <li>
+            <a href="#schedule">Графік занять</a>
           </li>
         </ul>
       </div>

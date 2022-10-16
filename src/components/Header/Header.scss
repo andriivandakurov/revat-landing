@@ -18,6 +18,12 @@
     }
   }
 
+  .contact-phone {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+
   &-nav-button {
     display: none;
 
@@ -45,6 +51,9 @@
     color: $light-grey;
 
     visibility: hidden; // temp
+    position: absolute; // temp
+    clip: rect(1px 1px 1px 1px); // temp
+    clip: rect(1px, 1px, 1px, 1px); // temp
 
     @include mobile {
       display: none;

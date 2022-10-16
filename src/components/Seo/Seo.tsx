@@ -18,6 +18,7 @@ const SEO: React.FunctionComponent<SeoProps> = ({
     query={detailsQuery}
     render={data => {
       const metaDescription = description || data.site.siteMetadata.description
+      const metaTitle = title || data.site.siteMetadata.title
       const image = `https://revat-meta.netlify.com${previewImage}`
 
       return (
@@ -25,8 +26,8 @@ const SEO: React.FunctionComponent<SeoProps> = ({
           htmlAttributes={{
             lang,
           }}
-          title={title}
-          titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+          title={metaTitle}
+          titleTemplate={`%s`}
           meta={[
             {
               name: 'description',
@@ -34,7 +35,7 @@ const SEO: React.FunctionComponent<SeoProps> = ({
             },
             {
               name: 'name',
-              content: data.site.siteMetadata.title,
+              content: metaTitle,
             },
             {
               name: 'image',
@@ -42,7 +43,7 @@ const SEO: React.FunctionComponent<SeoProps> = ({
             },
             {
               property: 'og:title',
-              content: data.site.siteMetadata.title,
+              content: metaTitle,
             },
             {
               property: 'og:description',
@@ -66,7 +67,7 @@ const SEO: React.FunctionComponent<SeoProps> = ({
             },
             {
               name: 'twitter:title',
-              content: data.site.siteMetadata.title,
+              content: metaTitle,
             },
             {
               name: 'twitter:description',
