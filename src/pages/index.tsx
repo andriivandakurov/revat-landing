@@ -490,6 +490,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
             {[
               {
                 sectionName: 'OpenGym',
+                description: 'Cамостійне тренування без тренера',
                 options: [
                   {
                     name: 'Безлім',
@@ -528,6 +529,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               },
               {
                 sectionName: 'Спліти',
+                description: 'Група до 4 людей, гнучкий графік',
                 options: [
                   {
                     name: '10 занять',
@@ -552,6 +554,8 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               },
               {
                 sectionName: 'Персональні тренування',
+                description:
+                  'Тільки ти, тренер і слабкі сторони, над якими ви працюєте',
                 options: [
                   {
                     name: '10 занять',
@@ -565,9 +569,16 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                     name: 'Разове заняття',
                     price: 450,
                   },
-                  {
-                    name: 'в сертифікованого тренера з кросфіту CF lvl2',
-                  },
+                ],
+              },
+              {
+                sectionName: (
+                  <span>
+                    Персональні тренування в сертифікованого тренера з кросфіту
+                    CF&nbsp;lvl2
+                  </span>
+                ),
+                options: [
                   {
                     name: '10 занять',
                     price: 5000,
@@ -602,7 +613,15 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               },
             ].map(section => (
               <div className="section">
-                <h5>{section.sectionName}:</h5>
+                <h5>
+                  {section.sectionName}:
+                  {section.description && (
+                    <div className="description">
+                      <div className="icon">?</div>
+                      <div className="text">{section.description}</div>
+                    </div>
+                  )}
+                </h5>
 
                 {section.options.map(option => (
                   <div className="pice-list-row">
@@ -652,7 +671,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
               details: [
                 {
                   days: ['Субота'],
-                  hours: ['10:00'],
+                  hours: ['10:00', '12:00'],
                 },
               ],
             },
