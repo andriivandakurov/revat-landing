@@ -1,4 +1,5 @@
 import * as React from 'react'
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage'
 import './Image.scss'
 
 const Image = ({ ...rest }) => {
@@ -16,10 +17,10 @@ const Image = ({ ...rest }) => {
     <>
       {click && (
         <div onClick={unsetFlag} className="expanded-image">
-          <img {...rest} />
+          <ResponsiveImage {...rest} />
         </div>
       )}
-      <img {...rest} onClick={setFlag} className="image" />
+      <ResponsiveImage onClick={setFlag} className="image" {...rest} />
     </>
   )
 }
