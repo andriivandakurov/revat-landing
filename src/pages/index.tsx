@@ -10,26 +10,38 @@ import Footer from '../components/Footer/Footer'
 import ButtonMarkup from '../components/ButtonMarkup/ButtonMarkup'
 import ScrollTopButton from '../components/ScrollTopButton/ScrollTopButton'
 import Image from '../components/Image/Image'
+import ResponsiveImage from '../components/ResponsiveImage/ResponsiveImage'
 import ImageGallery from '../components/ImageGallery/ImageGallery'
 
 import ColorLogo from '../images/color-logo.png'
 import RevatTeam from '../images/advantages/revat-team.jpg'
+import RevatTeamMobile from '../images/advantages/revat-team_mobile.jpg'
 import RevatTeam2 from '../images/advantages/revat-team_2.jpg'
+import RevatTeam2Mobile from '../images/advantages/revat-team_2_mobile.jpg'
 import RevatTeam3 from '../images/advantages/revat-team_3.jpg'
+import RevatTeam3Mobile from '../images/advantages/revat-team_3_mobile.jpg'
 // import WeightIcon from '../images/advantages/weight.png'
 // import HeartIcon from '../images/advantages/heart.png'
 // import LightningIcon from '../images/advantages/lightning.png'
 // import DumbbellIcon from '../images/advantages/dumbbell.png'
 
 import StaffImage1 from '../images/staff/1.jpg'
+import StaffImage1Mobile from '../images/staff/1_mobile.jpg'
 import StaffImage2 from '../images/staff/IMG_8324.jpg'
+import StaffImage2Mobile from '../images/staff/IMG_8324_mobile.jpg'
 import StaffImage3 from '../images/staff/3.jpg'
+import StaffImage3Mobile from '../images/staff/3_mobile.jpg'
 import StaffImage4 from '../images/staff/4.jpg'
+import StaffImage4Mobile from '../images/staff/4_mobile.jpg'
 
 import ClassImage1 from '../images/class/1.jpg'
+import ClassImage1Mobile from '../images/class/1_mobile.jpg'
 import ClassImage2 from '../images/class/2.jpg'
+import ClassImage2Mobile from '../images/class/2_mobile.jpg'
 import ClassImage3 from '../images/class/IMG_7845.jpg'
+import ClassImage3Mobile from '../images/class/IMG_7845_mobile.jpg'
 import ClassImage4 from '../images/class/mobility.jpg'
+import ClassImage4Mobile from '../images/class/mobility_mobile.jpg'
 
 import GymVideoMp4 from '../videos/squat-it.mp4'
 import Carousel, { CarouselItem } from '../components/Carousel/Carousel'
@@ -93,13 +105,19 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
           <div className="advantages-team-photo-container">
             <Carousel>
               <CarouselItem>
-                <img src={RevatTeam} />
+                <ResponsiveImage src={RevatTeam} mobileSrc={RevatTeamMobile} />
               </CarouselItem>
               <CarouselItem>
-                <img src={RevatTeam2} />
+                <ResponsiveImage
+                  src={RevatTeam2}
+                  mobileSrc={RevatTeam2Mobile}
+                />
               </CarouselItem>
               <CarouselItem>
-                <img src={RevatTeam3} />
+                <ResponsiveImage
+                  src={RevatTeam3}
+                  mobileSrc={RevatTeam3Mobile}
+                />
               </CarouselItem>
             </Carousel>
           </div>
@@ -179,7 +197,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   <span>60 хвилин &#8226; 1550 грн &#8226; 12 занять</span>
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={ClassImage1} />
+                  <Image src={ClassImage1} mobileSrc={ClassImage1Mobile} />
                 </div>
               </div>
               <div className="staff-item-data">
@@ -198,7 +216,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   <span>60+ хвилин &#8226; 4000 грн &#8226; 10 занять</span>
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={ClassImage2} />
+                  <Image src={ClassImage2} mobileSrc={ClassImage2Mobile} />
                 </div>
               </div>
               <div className="staff-item-data">
@@ -220,7 +238,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   <span>120хв &#8226; 250 грн/заняття</span>
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={ClassImage3} />
+                  <Image src={ClassImage3} mobileSrc={ClassImage3Mobile} />
                 </div>
               </div>
               <div className="staff-item-data">
@@ -241,7 +259,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   <span>60 хвилин &#8226; 250 грн/заняття</span>
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={ClassImage4} />
+                  <Image src={ClassImage4} mobileSrc={ClassImage4Mobile} />
                 </div>
               </div>
               <div className="staff-item-data">
@@ -338,7 +356,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   ЧЕРЕВАТИЙ
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={StaffImage1} />
+                  <Image src={StaffImage1} mobileSrc={StaffImage1Mobile} />
                 </div>
               </div>
               <div className="staff-item-data">
@@ -367,7 +385,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   Черевата
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={StaffImage2} />
+                  <Image src={StaffImage2} mobileSrc={StaffImage2Mobile} />
                 </div>
               </div>
               <div className="staff-item-data">
@@ -397,7 +415,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   КРИВКО
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={StaffImage3} />
+                  <Image src={StaffImage3} mobileSrc={StaffImage3Mobile} />
                 </div>
               </div>
               <div className="staff-item-data">
@@ -422,7 +440,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   ПЕТРУК
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={StaffImage4} />
+                  <Image src={StaffImage4} mobileSrc={StaffImage4Mobile} />
                 </div>
               </div>
               <div className="staff-item-data">
