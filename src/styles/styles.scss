@@ -840,11 +840,11 @@ h5 {
       &.class-5 {
         flex-direction: row;
         align-items: flex-start;
-        max-width: percentage($staff-width + 2.5) / 100;
+        max-width: percentage($staff-width + 15) / 100;
 
         .staff-item-data {
           padding: 160px 0 25px 25px;
-          max-width: get-image-wrap-width($staff-width + 2.5);
+          max-width: get-image-wrap-width($staff-width + 15);
         }
 
         .staff-item-label {
@@ -891,7 +891,6 @@ h5 {
   color: $black;
   background-color: $light-grey;
   padding: 80px 0;
-  min-height: 100vh;
 
   @include tablet {
     padding: 60px 0;
