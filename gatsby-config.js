@@ -1,9 +1,9 @@
 module.exports = {
-  pathPrefix: "/revat-landing",
+  pathPrefix: "/",
   siteMetadata: {
     title: 'REVAT – спеціалізований кросфіт зал. Групові та індивідуальні заняття',
     description: 'Групові та індивідуальні заняття з кросфіту для новачків та професіоналів. Ранкові та вечірні заняття. Сертифіковані тренери, крута атмосфера, індивідуальний підхід. Перше заняття безкоштовне',
-    author: 'hello@teonica.com',
+    author: 'andriy.vandakurov@gmail.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
