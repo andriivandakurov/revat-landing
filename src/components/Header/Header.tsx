@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header className={classNames('header', { open: isOpen })}>
-      <button className="header-nav-button" onClick={handler}>
+      <button className="header-nav-button" onClick={handler} name="open menu">
         <img src={isOpen ? CloseIcon : MenuIcon} />
       </button>
 
