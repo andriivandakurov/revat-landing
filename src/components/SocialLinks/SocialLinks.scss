@@ -7,6 +7,36 @@
 
   li {
     margin: 0 11px;
+    height: 18px;
+
+    object,
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  &.is-header {
+    li {
+      display: flex;
+      justify-content: center;
+
+      object,
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    @include mobile {
+      li {
+        width: 25px;
+        height: unset;
+        a {
+          height: 25px;
+        }
+      }
+    }
   }
 }
 

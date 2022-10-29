@@ -36,11 +36,13 @@ const Carousel = ({ children }) => {
           onClick={() => {
             updateIndex(activeIndex - 1)
           }}
+          name="open previous image"
         />
         <button
           onClick={() => {
             updateIndex(activeIndex + 1)
           }}
+          name="open next image"
         />
       </div>
     </div>

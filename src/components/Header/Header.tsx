@@ -6,7 +6,7 @@ import * as classNames from 'classnames'
 import SocialLinks from '../SocialLinks/SocialLinks'
 
 import CloseIcon from '../../images/close.svg'
-import MenuIcon from '../../images/menu.svg'
+import MenuIcon from '../../images/menu.png'
 import phoneIcon from '../../images/social-icons/phone-icon.svg'
 
 const Header = () => {
@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header className={classNames('header', { open: isOpen })}>
-      <button className="header-nav-button" onClick={handler}>
+      <button className="header-nav-button" onClick={handler} name="open menu">
         <img src={isOpen ? CloseIcon : MenuIcon} />
       </button>
 
@@ -68,7 +68,7 @@ const Header = () => {
         +380934277353
       </a>
 
-      <SocialLinks />
+      <SocialLinks isHeader />
     </header>
   )
 }

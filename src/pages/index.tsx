@@ -14,11 +14,11 @@ import ResponsiveImage from '../components/ResponsiveImage/ResponsiveImage'
 import ImageGallery from '../components/ImageGallery/ImageGallery'
 
 import ColorLogo from '../images/color-logo.png'
-import RevatTeam from '../images/advantages/revat-team.jpg'
+// import RevatTeam from '../images/advantages/revat-team.jpg'
 import RevatTeamMobile from '../images/advantages/revat-team_mobile.jpg'
-import RevatTeam2 from '../images/advantages/revat-team_2.jpg'
+// import RevatTeam2 from '../images/advantages/revat-team_2.jpg'
 import RevatTeam2Mobile from '../images/advantages/revat-team_2_mobile.jpg'
-import RevatTeam3 from '../images/advantages/revat-team_3.jpg'
+// import RevatTeam3 from '../images/advantages/revat-team_3.jpg'
 import RevatTeam3Mobile from '../images/advantages/revat-team_3_mobile.jpg'
 // import WeightIcon from '../images/advantages/weight.png'
 // import HeartIcon from '../images/advantages/heart.png'
@@ -33,7 +33,7 @@ import StaffImage3Mobile from '../images/staff/3_mobile.jpg'
 import StaffImage4 from '../images/staff/4.jpg'
 import StaffImage4Mobile from '../images/staff/4_mobile.jpg'
 
-import ClassImage1 from '../images/class/1.jpg'
+// import ClassImage1 from '../images/class/1.jpg'
 import ClassImage1Mobile from '../images/class/1_mobile.jpg'
 import ClassImage2 from '../images/class/2.jpg'
 import ClassImage2Mobile from '../images/class/2_mobile.jpg'
@@ -104,19 +104,13 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
           <div className="advantages-team-photo-container">
             <Carousel>
               <CarouselItem>
-                <ResponsiveImage src={RevatTeam} mobileSrc={RevatTeamMobile} />
+                <ResponsiveImage src={RevatTeamMobile} />
               </CarouselItem>
               <CarouselItem>
-                <ResponsiveImage
-                  src={RevatTeam2}
-                  mobileSrc={RevatTeam2Mobile}
-                />
+                <ResponsiveImage src={RevatTeam2Mobile} />
               </CarouselItem>
               <CarouselItem>
-                <ResponsiveImage
-                  src={RevatTeam3}
-                  mobileSrc={RevatTeam3Mobile}
-                />
+                <ResponsiveImage src={RevatTeam3Mobile} />
               </CarouselItem>
             </Carousel>
           </div>
@@ -196,7 +190,7 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                   <span>60 хвилин &#8226; 1550 грн &#8226; 12 занять</span>
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <Image src={ClassImage1} mobileSrc={ClassImage1Mobile} />
+                  <Image src={ClassImage1Mobile} />
                 </div>
               </div>
               <div className="staff-item-data">

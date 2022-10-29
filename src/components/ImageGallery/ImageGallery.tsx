@@ -59,13 +59,13 @@ const ImageGallery = () => {
           <div className="row">
             {mainImages.map((images, i) => (
               <div className={`gallery-image-${i + 1}`}>
-                <Image src={images[0]} mobileSrc={images[1]} />
+                <Image src={images[0]} mobileSrc={images[1] || images[0]} />
               </div>
             ))}
             {loadMoreImagesFlag &&
               extraImages.map((images, i) => (
                 <div className={`gallery-image-${(i % 6) + 1}`}>
-                  <Image src={images[0]} mobileSrc={images[1]} />
+                  <Image src={images[0]} mobileSrc={images[1] || images[0]} />
                 </div>
               ))}
           </div>
