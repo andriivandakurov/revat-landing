@@ -27,6 +27,10 @@ body {
   }
 }
 
+b {
+  font-weight: bold;
+}
+
 .video {
   &-wrapper {
     width: 100%;
@@ -1007,6 +1011,57 @@ h5 {
 
     .option {
       margin-top: 10px;
+    }
+  }
+}
+
+.news {
+  background-color: $light-grey;
+  min-height: 100vh;
+  color: black;
+  padding: 80px 0;
+
+  .news-article {
+    display: flex;
+    margin-bottom: 56px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid gray;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  .news-article-last {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  h3 {
+    color: black;
+  }
+
+  h5 {
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .news-article-img {
+    max-width: 400px;
+    margin-right: 32px;
+
+    @include mobile {
+      max-width: 100%;
+      margin-bottom: 16px;
     }
   }
 }

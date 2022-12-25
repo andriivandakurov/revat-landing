@@ -23,7 +23,7 @@ const SocialLinks: React.SFC<{
       </a>
     </li>
     <li>
-      <a href="https://www.facebook.com/revathardtotal/" target="_blank">
+      <a href="https://www.facebook.com/RevatGym" target="_blank">
         <img src={facebookIcon} alt="facebook" />
       </a>
     </li>
