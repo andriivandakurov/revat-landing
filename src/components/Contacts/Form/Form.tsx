@@ -39,7 +39,7 @@ const Form: React.SFC<{}> = () => {
             noValidate
             ref={formEl}
             className="contact-form"
-            action="https://formspree.io/hello@revatgym.com"
+            action="https://formspree.io/f/xbjbavvb"
             method="POST"
             onSubmit={handleSubmit}
           >
