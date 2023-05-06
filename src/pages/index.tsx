@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+  import { graphql } from 'gatsby'
 
 import SEO from '../components/Seo/Seo'
 import BurpeeCounter from '../components/BurpeeCounter/BurpeeCounter'
@@ -41,6 +41,7 @@ import ClassImage3 from '../images/class/IMG_7845.jpg'
 import ClassImage3Mobile from '../images/class/IMG_7845_mobile.jpg'
 import ClassImage4 from '../images/class/mobility.jpg'
 import ClassImage4Mobile from '../images/class/mobility_mobile.jpg'
+import ClassImageOnline from '../images/class/sugarwod.png'
 
 import BanderstadtThrowdownLogo from '../images/news/revat-competitions.jpg'
 import Generator from '../images/news/generator.jpg'
@@ -272,23 +273,23 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                 роботою.
               </div>
             </div>
-            {/* <div className="staff-item class-5">
+             <div className="staff-item class-5">
               <div className="staff-item-container">
                 <div className="staff-item-label">
-                  Підготовка до Race Nation
-                  <span>90 хвилин &#8226; 1200 грн</span>
+                  Online тренування
+                    <span>1000 грн/місяць</span>
                 </div>
                 <div className="staff-item-image-wrapper">
-                  <img src={ClassImage1} />
+                  <img src={ClassImageOnline} />
                 </div>
               </div>
               <div className="staff-item-data">
-                Безліч атлетів нашого залу приймають участь у даній гонці та
-                виступають все краще і краще! Підйом по канату чи вибігання на
-                рампу будуть нескладними якщо ти довіриш свою підготовку
-                професіоналам!
+                Для всіх, хто не має змогу відвідувати наш зал, але має ціль тренуватись за професійною програмою та покращувати свою фізичну форму і самопочуття!
+                У нас є онлайн програма, доступна для широкого спектру тренувань: вдома, в тренажерному залі, без інвентарю, чи в просторому кросфіт боксі, де є все необхідне для продуктивних тренувань!
+                В будь-якому випадку, ми створюємо програму в який існує безліч прогресій, поступове збільшення навантажень, врахування травм, застережень - простими словами все, що має враховувати програма, спрямована на максимальний розвиток атлета!
               </div>
             </div>
+            {/*
             <div className="staff-item class-6">
               <div className="staff-item-container">
                 <div className="staff-item-label">
@@ -705,8 +706,8 @@ const getPricesMarkup = (): JSX.Element[] => {
     },
   ]
 
-  return pricesData.map(section => (
-    <div className="section">
+  return pricesData.map((section, index) => (
+    <div className="section" key={`prices-${index}`}>
       <h5>
         {section.sectionName}:
         {section.description && (
@@ -717,8 +718,8 @@ const getPricesMarkup = (): JSX.Element[] => {
         )}
       </h5>
 
-      {section.options.map(option => (
-        <div className="pice-list-row">
+      {section.options.map((option, index) => (
+        <div className="pice-list-row" key={`options-${index}`}>
           <div>{option.name}</div>
           {option.price && <div>{option.price} грн</div>}
         </div>
@@ -738,7 +739,7 @@ const getScheduleMarkup = (): JSX.Element[] => {
         },
         {
           days: ['Вівторок', 'Четвер'],
-          hours: ['18:00', '19:00'],
+          hours: ['18:00', '19:00', '20:00'],
         },
         {
           days: ['Субота'],
@@ -762,16 +763,20 @@ const getScheduleMarkup = (): JSX.Element[] => {
           days: ['Субота'],
           hours: ['10:00', '12:00'],
         },
+        {
+          days: ['Пятниця'],
+          hours: ['20:00'],
+        },
       ],
     },
   ]
 
-  return scheduleData.map(item => (
-    <div className="section">
+  return scheduleData.map((item, index) => (
+    <div className="section" key={`schedule-${index}`}>
       <h5>{item.type}:</h5>
 
-      {item.details.map(option => (
-        <div className="option">
+      {item.details.map((option, index) => (
+        <div className="option" key={`details-${index}`}>
           <h6>{option.days.join(', ')}</h6>
           <div>{option.hours.join(', ')}</div>
         </div>
