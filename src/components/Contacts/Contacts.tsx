@@ -15,7 +15,7 @@ class Contacts extends React.Component {
   constructor(props: any) {
     super(props);
     this.state = {
-      selectedTabName: window.location.pathname.includes('revat-2') ? Tabs.revat2 : Tabs.revat1
+      selectedTabName: typeof window !== 'undefined' && window.location.pathname.includes('revat-2') ? Tabs.revat2 : Tabs.revat1
     };
     this.switchTab = this.switchTab.bind(this);
   }
