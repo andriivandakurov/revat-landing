@@ -63,7 +63,6 @@ const Form: React.SFC<Props> = ({ activeTab, tabClick }) => {
               </button>
               <button className={`button ${isActiveTab(Tabs.revat2)}`} onClick={() => tabClick(Tabs.revat2)} type='button'>
                 <span>{Tabs.revat2}</span>
-                <span className="tail"></span>
               </button>
             </div>
 

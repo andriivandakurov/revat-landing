@@ -11,7 +11,7 @@ const NewsSection = () => {
                 <h3>Новини</h3>
 
                 <article className="news-article">
-                    <Image src={Revat2} className="news-article-img" loading="lazy" />
+                    <Image width="400" heigh="200" src={Revat2} className="news-article-img" loading="lazy" />
                     <div>
                         <h5>Відкриття нової локації спортзалу Crossfit REVAT 2.0</h5>
                         <p>Раді сповістити вам, що відкривається нова локація нашого залу Реват на Кульпарківській, 93.</p>
@@ -34,7 +34,7 @@ const NewsSection = () => {
                 </article>
 
                 <article className="news-article">
-                    <Image src={BanderstadtThrowdownLogo} className="news-article-img" loading="lazy" />
+                    <Image width="400" height="400" src={BanderstadtThrowdownLogo} className="news-article-img" loading="lazy" />
                     <div>
                         <h5>Благодійний турнір BANDERSTADT THROWDOWN з кросфіту на підтримку ЗСУ.</h5>
                         <p><b>Revat</b> спільно із залами <a href="https://instagram.com/olimplviv?igshid=YmMyMTA2M2Y="><b>Олімп</b></a> та <a href="https://instagram.com/asgard_homegym?igshid=YmMyMTA2M2Y="><b>Asgard Home Gym</b></a> організовують змагання з Crossfit, мета якого - зібрати кошти для підтримки ЗСУ.</p>
@@ -69,7 +69,7 @@ const NewsSection = () => {
                 </article>
 
                 <article className="news-article news-article-last">
-                    <Image src={Generator} className="news-article-img" loading="lazy" />
+                    <Image width="400" height="314" src={Generator} className="news-article-img" loading="lazy" />
                     <div>
                         <h5>Працюємо навіть без світла!</h5>
                         <p>Навіть у найтемніші часи видно світлих людей. А у нас видно атлетів, які мають змогу займатись у Revat не залежно від наявності світла.</p>

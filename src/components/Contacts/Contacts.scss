@@ -84,12 +84,18 @@
   .address-block {
     a {
       display: flex;
+      align-items: center;
       gap: 20px;
+
+      span {
+        text-align: left;
+      }
     }
 
     object {
       width: 40px;
       pointer-events: none;
+      max-height: 50px;
     }
   }
 }

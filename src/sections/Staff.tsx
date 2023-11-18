@@ -10,6 +10,9 @@ import StaffImage4Mobile from '../images/staff/4_mobile.jpg';
 import ColorLogo from '../images/color-logo.png'
 import Alina from '../images/staff/Alina.jpg';
 
+import facebookIcon from '../images/social-icons/facebook-icon.png'
+import instagramIcon from '../images/social-icons/instagram-icon.png'
+
 const StaffSection = () => {
     return (
         <section className="staff" id="coaches">
@@ -38,11 +41,14 @@ const StaffSection = () => {
                             загублений роками досвіду. А ще вміє насупити брови так, що
                             захочеться викладатись більше!
                             <br />
-                            <a href="https://instagram.com/yuliian_cherevatyi">Instagram</a>
-                            <br />
-                            <a href="https://www.facebook.com/profile.php?id=100007577896790">
-                                Facebook
-                            </a>
+                            <div className="staff-social-block">
+                                <a className="staff-social-link" href="https://instagram.com/yuliian_cherevatyi" title="Instagram">
+                                    <img src={instagramIcon} alt="instagram" />
+                                </a>
+                                <a className="staff-social-link" href="https://www.facebook.com/profile.php?id=100007577896790" title="Facebook">
+                                    <img src={facebookIcon} alt="facebook" />
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -68,11 +74,14 @@ const StaffSection = () => {
                             завжди знаєш, скільки ти б не підняв - Оля підніме більше! Це
                             створює мотивацію розвиватись.
                             <br />
-                            <a href="https://instagram.com/olya_cherevata">Instagram</a>
-                            <br />
-                            <a href="https://www.facebook.com/profile.php?id=100021854324264">
-                                Facebook
-                            </a>
+                            <div className="staff-social-block">
+                                <a className="staff-social-link" href="https://instagram.com/olya_cherevata" title="Instagram">
+                                    <img src={instagramIcon} alt="instagram" />
+                                </a>
+                                <a className="staff-social-link" href="https://www.facebook.com/profile.php?id=100021854324264" title="Facebook">
+                                    <img src={facebookIcon} alt="facebook" />
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -96,9 +105,14 @@ const StaffSection = () => {
                             змаганнях, хоча колись прийшли в наш зальчик новачками! Вміє
                             мотивувати одним тільки поглядом.
                             <br />
-                            <a href="https://instagram.com/the_bro.girl">Instagram</a>
-                            <br />
-                            <a href="https://www.facebook.com/krivko.elizaveta">Facebook</a>
+                            <div className="staff-social-block">
+                                <a className="staff-social-link" href="https://instagram.com/the_bro.girl" title="Instagram">
+                                    <img src={instagramIcon} alt="instagram" />
+                                </a>
+                                <a className="staff-social-link" href="https://www.facebook.com/krivko.elizaveta" title="Facebook">
+                                    <img src={facebookIcon} alt="facebook" />
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -121,11 +135,14 @@ const StaffSection = () => {
                             зовнішній вигляд, тренування цікаві та продуктивні. Досягнення
                             ваших цілей - справа часу!
                             <br />
-                            <a href="https://instagram.com/yarinapetruk">Instagram</a>
-                            <br />
-                            <a href="https://www.facebook.com/profile.php?id=100017179993857">
-                                Facebook
-                            </a>
+                            <div className="staff-social-block">
+                                <a className="staff-social-link" href="https://instagram.com/yarinapetruk" title="Instagram">
+                                    <img src={instagramIcon} alt="instagram" />
+                                </a>
+                                <a className="staff-social-link" href="https://www.facebook.com/profile.php?id=100017179993857" title="Facebook">
+                                    <img src={facebookIcon} alt="facebook" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -136,7 +153,7 @@ const StaffSection = () => {
                             <div className="staff-item-label">
                                 АЛІНА
                                 <br />
-                                БУЛІМ
+                                БУЛИМ
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={Alina} mobileSrc={Alina} />
@@ -150,9 +167,14 @@ const StaffSection = () => {
                             Аліна відданий тренер, який завжди підтримує та мотивує підопічних.
                             Знає 10000 вправ на прес, то ж прогрес під її керівництвом справа часу.
                             <br />
-                            <a href="https://instagram.com/bulymalina">Instagram</a>
-                            <br />
-                            <a href="https://www.facebook.com/profile.php?id=100006769693341">Facebook</a>
+                            <div className="staff-social-block">
+                                <a className="staff-social-link" href="https://instagram.com/bulymalina" title="Instagram">
+                                    <img src={instagramIcon} alt="instagram" />
+                                </a>
+                                <a className="staff-social-link" href="https://www.facebook.com/profile.php?id=100006769693341" title="Facebook">
+                                    <img src={facebookIcon} alt="facebook" />
+                                </a>
+                            </div>
                         </div>
                     </div>
 
