@@ -729,13 +729,15 @@ h5 {
       &.staff-5 {
         flex-direction: row-reverse;
         align-items: flex-start;
-        max-width: percentage($staff-width) / 100;
+        // max-width: percentage($staff-width) / 100;
+        max-width: 47%;
         top: 57px;
 
         .staff-item-data {
           padding-right: 15px;
           padding-top: 125px;
-          max-width: get-image-wrap-width($staff-width);
+          // max-width: get-image-wrap-width($staff-width);
+          max-width: 55%;
         }
 
         .staff-item-label {

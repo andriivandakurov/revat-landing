@@ -89,4 +89,20 @@
       font-size: 1.71rem;
     }
   }
+
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 58px;
+
+    button {
+      margin: 0;
+      margin-right: -15px;
+      opacity: 0.8;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
 }

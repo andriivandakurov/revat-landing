@@ -80,4 +80,16 @@
     text-transform: uppercase;
     margin-bottom: 59px;
   }
+
+  .address-block {
+    a {
+      display: flex;
+      gap: 20px;
+    }
+
+    object {
+      width: 40px;
+      pointer-events: none;
+    }
+  }
 }

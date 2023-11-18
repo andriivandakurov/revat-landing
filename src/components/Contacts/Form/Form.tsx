@@ -8,9 +8,19 @@ import FormField from '../FormField/FormField'
 
 import validateForm from './validators'
 import fields from './fields'
+import { Tabs } from '../Contacts'
 
-const Form: React.SFC<{}> = () => {
-  const formEl: React.MutableRefObject<any> = React.useRef(null)
+type Props = {
+  activeTab: Tabs,
+  tabClick: (selectedTab: Tabs) => void,
+}
+
+const Form: React.SFC<Props> = ({ activeTab, tabClick }) => {
+  const formEl: React.MutableRefObject<any> = React.useRef(null);
+
+  const isActiveTab = (originalTabName: Tabs) => {
+    return activeTab === originalTabName ? 'active' : '';
+  }
 
   return (
     <Formik
@@ -18,6 +28,7 @@ const Form: React.SFC<{}> = () => {
         name: '',
         phone: '',
         email: '',
+        location: '',
         _next: '//revatgym.com',
       }}
       validateOnBlur={true}
@@ -45,7 +56,19 @@ const Form: React.SFC<{}> = () => {
           >
             <h3>Записатись на безкоштовне треннування</h3>
 
+            <div className="buttons-container">
+              <button className={`button ${isActiveTab(Tabs.revat1)}`} onClick={() => tabClick(Tabs.revat1)} type='button'>
+                <span>{Tabs.revat1}</span>
+                <span className="tail"></span>
+              </button>
+              <button className={`button ${isActiveTab(Tabs.revat2)}`} onClick={() => tabClick(Tabs.revat2)} type='button'>
+                <span>{Tabs.revat2}</span>
+                <span className="tail"></span>
+              </button>
+            </div>
+
             <input type="hidden" name="_next" value={values._next} />
+            <input type="hidden" name="location" value={activeTab} />
 
             {fields.map((field, i) => {
               return (
