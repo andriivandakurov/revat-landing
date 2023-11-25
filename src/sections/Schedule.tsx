@@ -43,12 +43,12 @@ const getScheduleMarkup = (): JSX.Element[] => {
             type: 'Мобіліті',
             details: [
                 {
-                    days: ['Субота'],
-                    hours: ['10:00', '12:00'],
-                },
-                {
                     days: ['Пятниця'],
                     hours: ['20:00'],
+                },
+                {
+                    days: ['Субота'],
+                    hours: ['10:00', '12:00'],
                 },
             ],
         },

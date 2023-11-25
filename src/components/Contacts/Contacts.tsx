@@ -3,7 +3,6 @@ import './Contacts.scss'
 import * as React from 'react'
 import Form from './Form/Form'
 
-// import mapIcon from '../../images/map-icon.svg';
 import mapIcon from '../../images/gmaps-icon.svg';
 
 export enum Tabs {
@@ -15,7 +14,7 @@ class Contacts extends React.Component {
   constructor(props: any) {
     super(props);
     this.state = {
-      selectedTabName: typeof window !== 'undefined' && window.location.pathname.includes('revat-2') ? Tabs.revat2 : Tabs.revat1
+      selectedTabName: Tabs.revat1
     };
     this.switchTab = this.switchTab.bind(this);
   }

@@ -2,7 +2,6 @@ import * as React from 'react';
 import SEO from '../components/Seo/Seo';
 import Header from '../components/Header/Header';
 import Contacts from '../components/Contacts/Contacts';
-import Map from '../components/Map/Map';
 import Footer from '../components/Footer/Footer';
 import ButtonMarkup from '../components/ButtonMarkup/ButtonMarkup';
 import ScrollTopButton from '../components/ScrollTopButton/ScrollTopButton';
