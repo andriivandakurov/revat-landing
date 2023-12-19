@@ -5,6 +5,10 @@ const PricesSection = () => {
         <section className="price" id="price">
             <div className="container">
                 <h3>Ціни</h3>
+                <div className="oferta-link-container">
+                  <p><a href="/oferta" target="_blank">Договір оферти</a></p><br/>
+                  <a href="/polityka-konfidentsijnosti" target="_blank">Політика конфіденційності</a>
+                </div>
 
                 <div className="price-list">
                     {getPricesMarkup()}

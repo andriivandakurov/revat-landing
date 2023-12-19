@@ -7,7 +7,7 @@ import mapIcon from '../../images/gmaps-icon.svg';
 
 export enum Tabs {
   revat1 = 'Жовківська',
-  revat2 = 'Садова'
+  revat2 = 'Кульпарківська'
 }
 
 class Contacts extends React.Component {
