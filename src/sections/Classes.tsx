@@ -20,7 +20,7 @@ const ClassesSection = () => {
                         <div className="staff-item-container">
                             <div className="staff-item-label">
                                 Групові тренування
-                                <span>60 хвилин &#8226; 1550 грн &#8226; 12 занять</span>
+                                <span>60 хвилин</span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={ClassImage1Mobile} />
@@ -39,8 +39,8 @@ const ClassesSection = () => {
                     <div className="staff-item class-2">
                         <div className="staff-item-container">
                             <div className="staff-item-label">
-                                Індивідуальні тренування
-                                <span>60+ хвилин &#8226; 4000 грн &#8226; 10 занять</span>
+                                Індивідуальні тренування &nbsp;
+                                <span>60+ хвилин</span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={ClassImage2} mobileSrc={ClassImage2Mobile} />
@@ -61,8 +61,8 @@ const ClassesSection = () => {
                     <div className="staff-item class-4">
                         <div className="staff-item-container">
                             <div className="staff-item-label">
-                                Важка атлетика
-                                <span>120хв &#8226; 250 грн/заняття</span>
+                                Важка атлетика &nbsp;
+                                <span>120 хвилин</span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={ClassImage3} mobileSrc={ClassImage3Mobile} />
@@ -84,8 +84,8 @@ const ClassesSection = () => {
                     <div className="staff-item class-5">
                         <div className="staff-item-container">
                             <div className="staff-item-label">
-                                Мобіліті
-                                <span>60 хвилин &#8226; 250 грн/заняття</span>
+                                Мобіліті &nbsp;
+                                <span>60 хвилин</span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={ClassImage4} mobileSrc={ClassImage4Mobile} />
@@ -106,7 +106,6 @@ const ClassesSection = () => {
                         <div className="staff-item-container">
                             <div className="staff-item-label">
                                 Online тренування
-                                <span>1000 грн/місяць</span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <img src={ClassImageOnline} />

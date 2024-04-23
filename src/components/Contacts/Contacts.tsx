@@ -3,7 +3,7 @@ import './Contacts.scss'
 import * as React from 'react'
 import Form from './Form/Form'
 
-import mapIcon from '../../images/gmaps-icon.svg';
+import mapIcon from '../../images/pin.png';
 
 export enum Tabs {
   revat1 = 'Жовківська',
@@ -46,7 +46,8 @@ class Contacts extends React.Component {
 
           <div className="address-block">
             <h5>Контакти</h5>
-            <a href="tel:+380934277353">+38 093 427 73 53</a>
+            <a href="tel:+380731978127">+38 073 197 81 27</a>
+            <br/>
             <address>
               <a href="https://goo.gl/maps/RU6y1cPijDB2" target="_blank">
                 <span>
@@ -54,9 +55,21 @@ class Contacts extends React.Component {
                   <br />
                   Львів, Україна
                 </span>
-                <object data={mapIcon} type="image/svg+xml" />
+                <img src={mapIcon} alt="вул. Жовківська 22" />
               </a>
             </address>
+            <br/>
+            <address>
+              <a href="https://maps.app.goo.gl/2HWWT2xW99jxmXtC7" target="_blank">
+                <span>
+                  вул. Кульпарківська 93
+                  <br />
+                  Львів, Україна
+                </span>
+                <img src={mapIcon} alt="вул. Кульпарківська 93" />
+              </a>
+            </address>
+            <br/>
             <a href="mailto:hello@revatgym.com">hello@revatgym.com</a>
           </div>
         </div>
@@ -90,8 +103,20 @@ class Contacts extends React.Component {
           </div>
 
           <div className="address-block">
-            <h5>Контакти</h5>
-            <a href="tel:+380934277353">+38 093 427 73 53</a>
+          <h5>Контакти</h5>
+            <a href="tel:+380731978127">+38 073 197 81 27</a>
+            <br/>
+            <address>
+              <a href="https://goo.gl/maps/RU6y1cPijDB2" target="_blank">
+                <span>
+                  вул. Жовківська 22
+                  <br />
+                  Львів, Україна
+                </span>
+                <object data={mapIcon} type="image/svg+xml" />
+              </a>
+            </address>
+            <br/>
             <address>
               <a href="https://maps.app.goo.gl/2HWWT2xW99jxmXtC7" target="_blank">
                 <span>
@@ -102,6 +127,7 @@ class Contacts extends React.Component {
                 <object data={mapIcon} type="image/svg+xml" />
               </a>
             </address>
+            <br/>
             <a href="mailto:hello@revatgym.com">hello@revatgym.com</a>
           </div>
         </div>

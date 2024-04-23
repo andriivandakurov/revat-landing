@@ -3,12 +3,26 @@ import Image from '../components/Image/Image';
 import Generator from '../images/news/generator.jpg';
 import BanderstadtThrowdownLogo from '../images/news/revat-competitions.jpg';
 import Revat2 from '../images/news/revat-2.png';
+import VSL from '../images/vsl.png';
 
 const NewsSection = () => {
     return (
         <section className="news" id="news">
             <div className="container">
                 <h3>Новини</h3>
+
+                <article className="news-article">
+                    <Image width="400" heigh="200" src={VSL} className="news-article-img" loading="lazy" />
+                    <div>
+                        <h5>Колаборація з Видавництвом Старого Лева</h5>
+
+                        <p>Revat, разом із нашими чудовими друзями, <b><a href="https://starylev.com.ua/">Видавництвом Старого Лева</a></b>, запускаємо колаборацію.</p>
+                        <p>Від нас <b>знижка на місячний абонемент 10% та смаколик усім, хто придбає книгу</b> (або будь-яку іншу покупку) на суму від 200 грн. у ВСЛ. </p>
+                        <p>Від видавництва - неймовірний асортимент книг на будь-який вік та за будь-яким жанром.</p>
+                        <p>Отож, <b>щоб отримати знижку</b>, купуємо книгу у ВСЛ, реєструємось у Cпільноті Старого Лева, отримуємо повідомлення з усіма деталями та купуємо абонемент на місяць до найкращого залу світу із 10% дисконтом.</p>
+                        <p>Насолоджуємось, розвиваємось та розказуємо друзям.</p>
+                    </div>
+                </article>
 
                 <article className="news-article">
                     <Image width="400" heigh="200" src={Revat2} className="news-article-img" loading="lazy" />

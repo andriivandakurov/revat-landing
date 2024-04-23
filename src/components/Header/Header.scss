@@ -3,11 +3,19 @@
 
 .header {
   display: flex;
-  flex: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 44px 0 0 0;
-  position: relative;
+  margin: 0;
+  position: fixed;
+  z-index: 100;
+  background: rgba(0,0,0,0.9);
+  padding: 22px;
+  left: 0;
+  right: 0;
+
+  @include mobile {
+    justify-content: space-around;
+  }
 
   a {
     text-decoration: none;
@@ -23,15 +31,12 @@
     display: flex;
     justify-content: center;
     font-weight: bold;
-
-    @include mobile {
-      position: absolute;
-      bottom: -40px;
-      right: 14px;
-    }
+    padding-right: 12px;
   }
 
   &-nav-button {
+    width: 23px;
+    height: 23px;
     display: none;
 
     @include mobile {
@@ -78,6 +83,7 @@
     font-weight: 900;
     text-transform: uppercase;
     color: #d7d7d7;
+    align-items: center;
 
     @include mobile {
       display: none;
@@ -115,11 +121,10 @@
         z-index: 100;
         background: $almost-black;
       }
-    }
-  }
 
-  @include small_mobile {
-    margin-left: -27.5px;
-    margin-right: -27.5px;
+      .contact-phone, .socials {
+        z-index: 100;
+      }
+    }
   }
 }

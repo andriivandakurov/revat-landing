@@ -47,9 +47,6 @@ const Header = () => {
           <a href="#classes">Тренування</a>
         </li>
         <li>
-          <a href="#gallery">Галерея</a>
-        </li>
-        <li>
           <a href="#coaches">Тренери</a>
         </li>
         <li>
@@ -61,11 +58,14 @@ const Header = () => {
         <li>
           <a href="#schedule">Графік занять</a>
         </li>
+        <li>
+          <a href="#news">Новини</a>
+        </li>
       </ul>
 
-      <a href="tel:+380934277353" className="contact-phone">
+      <a href="tel:+380731978127" className="contact-phone">
         <object data={phoneIcon} type="image/svg+xml" />
-        +380934277353
+        +380731978127
       </a>
 
       <SocialLinks isHeader />

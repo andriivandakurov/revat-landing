@@ -31,6 +31,10 @@ b {
   font-weight: bold;
 }
 
+.font-weight-600 {
+  font-weight: 600;
+}
+
 .video {
   &-wrapper {
     width: 100%;
@@ -59,7 +63,7 @@ b {
   max-width: $content-max-with;
   width: 100%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 30px;
 }
 
 h1 {
@@ -138,8 +142,48 @@ h5 {
     align-items: center;
     padding: 80px 0;
 
+    .address-block {
+      margin-top: 32px;
+
+      .address-block-title {
+        font-size: 2em;
+        margin-bottom: 24px;
+      }
+
+      @include mobile {
+        .address-block-title {
+          font-size: 1.71em;
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        gap: 20px;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 16px;
+
+        &:hover {
+          color: $red;
+        }
+
+        span {
+          text-align: left;
+          min-width: 180px;
+        }
+      }
+
+      object, img {
+        width: 40px;
+        pointer-events: none;
+        max-height: 50px;
+      }
+    }
+
     @include mobile {
-      padding: 40px 0;
+      padding: 87px 0 20px;
     }
   }
 
@@ -375,6 +419,7 @@ h5 {
       }
     }
   }
+
   .row {
     display: flex;
     flex-direction: row;
@@ -388,7 +433,7 @@ h5 {
       align-items: center;
     }
 
-    & > div {
+    &>div {
       flex: 0 0 30%;
     }
   }
@@ -471,7 +516,7 @@ h5 {
     display: flex;
     gap: 15px;
     justify-content: center;
-    margin-top:15px;
+    margin-top: 15px;
   }
 
   .staff-social-link {
@@ -550,6 +595,7 @@ h5 {
 
     .staff-item-label {
       width: 100%;
+
       @include desktop {
         max-width: 230px;
         width: 100%;
@@ -586,10 +632,15 @@ h5 {
     color: $light-grey;
     text-transform: uppercase;
     line-height: normal;
+    min-width: 165px;
+
+    span {
+      font-size: 10px !important;
+    }
 
     @include desktop {
       right: auto;
-      top: -20px;
+      top: -45px;
       left: 200px;
     }
 
@@ -693,6 +744,12 @@ h5 {
         .staff-item-data {
           padding-top: 45px;
         }
+      }
+
+      &.staff-2 .staff-item-image-wrapper img,
+      &.staff-3 .staff-item-image-wrapper img,
+      &.staff-4 .staff-item-image-wrapper img {
+        margin-top: -80px;
       }
     }
 
@@ -995,7 +1052,7 @@ h5 {
         padding: 5px;
       }
 
-      .icon:hover + .text {
+      .icon:hover+.text {
         display: block;
       }
     }
@@ -1004,8 +1061,9 @@ h5 {
       display: flex;
       width: 300px;
       justify-content: space-between;
+
       div {
-        max-width: 80%;
+        max-width: 70%;
       }
     }
   }
@@ -1049,6 +1107,35 @@ h5 {
       margin-top: 10px;
     }
   }
+
+  .container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .gym-schedule {
+    flex-basis: 40%;
+    padding: 16px 0;
+    background-color: rgba(0,0,0,0.8);
+
+    h3 {
+      font-size: 1.75em;
+      margin-bottom: 24px;
+    }
+  }
+
+  @include mobile {
+    .container {
+      display: block;
+    }
+
+    .gym-schedule {
+      margin-bottom: 40px;
+    }
+  }
+
+
 }
 
 .news {
@@ -1103,7 +1190,7 @@ h5 {
 }
 
 .thank-you {
-  background-color:black;
+  background-color: black;
 
   h1 {
     font-size: 1.7em;
@@ -1126,8 +1213,9 @@ h5 {
   }
 }
 
-.oferta, .confidential {
-  background-color:black;
+.oferta,
+.confidential {
+  background-color: black;
 
   .message-wrapper {
     text-align: left;

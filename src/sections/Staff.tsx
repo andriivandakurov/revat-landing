@@ -26,6 +26,8 @@ const StaffSection = () => {
                                 ЮЛІЯН
                                 <br />
                                 ЧЕРЕВАТИЙ
+                                <br />
+                                <span> тренер 3 категорії </span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={StaffImage1} />
@@ -58,6 +60,8 @@ const StaffSection = () => {
                                 Ольга
                                 <br />
                                 Черевата
+                                <br />
+                                <span> тренер 2 категорії </span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={StaffImage2} mobileSrc={StaffImage2Mobile} />
@@ -91,6 +95,8 @@ const StaffSection = () => {
                                 ЄЛИЗАВЕТА
                                 <br />
                                 КРИВКО
+                                <br />
+                                <span> тренер 2 категорії </span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={StaffImage3} mobileSrc={StaffImage3Mobile} />
@@ -122,6 +128,8 @@ const StaffSection = () => {
                                 ЯРИНА
                                 <br />
                                 ПЕТРУК
+                                <br />
+                                <span> тренер 2 категорії </span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={StaffImage4} mobileSrc={StaffImage4Mobile} />
@@ -154,6 +162,8 @@ const StaffSection = () => {
                                 АЛІНА
                                 <br />
                                 БУЛИМ
+                                <br />
+                                <span> тренер 2 категорії </span>
                             </div>
                             <div className="staff-item-image-wrapper">
                                 <Image src={Alina} mobileSrc={Alina} />

@@ -5,6 +5,7 @@ import { debounce } from 'lodash'
 import './ScrollTopButton.scss'
 
 import WeightIcon from '../../images/weight.svg'
+import ButtonMarkup from '../ButtonMarkup/ButtonMarkup'
 
 class ScrollTopButton extends React.Component<{}, { isScrolled: boolean }> {
   private offset: number = 270
@@ -49,6 +50,15 @@ class ScrollTopButton extends React.Component<{}, { isScrolled: boolean }> {
       >
         <img src={WeightIcon} />
       </a>
+      // <a href="#contacts"
+      //   className={classNames('scroll-top-button', {
+      //     show: this.state.isScrolled,
+      //   })}
+      // >
+      //   <ButtonMarkup>
+      //     Записатись на безкоштовне <br /> тренування
+      //   </ButtonMarkup>
+      // </a>
     )
   }
 }

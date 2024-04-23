@@ -17,6 +17,7 @@ import AdvantagesSection from '../sections/Advantages';
 
 import ColorLogo from '../images/color-logo.png';
 import GymVideoMp4 from '../videos/squat-it.mp4';
+import mapIcon from '../images/pin.png';
 
 const IndexPage: React.SFC<{}> = (props): JSX.Element => {
   return (
@@ -50,6 +51,26 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
                 Записатись на безкоштовне <br /> тренування
               </ButtonMarkup>
             </a>
+            <br/>
+            <div className="address-block">
+              <h3 className="address-block-title">Наші локації:</h3>
+              <address>
+                <a href="https://maps.app.goo.gl/2HWWT2xW99jxmXtC7" target="_blank">
+                  <span>
+                    вул. Кульпарківська 93
+                  </span>
+                  <img src={mapIcon} alt="вул. Кульпарківська 93" />
+                </a>
+              </address>
+              <address>
+                <a href="https://goo.gl/maps/RU6y1cPijDB2" target="_blank">
+                  <span>
+                    вул. Жовківська 22
+                  </span>
+                  <img src={mapIcon} alt="вул. Жовківська 22" />
+                </a>
+              </address>
+            </div>
           </div>
         </div>
 
@@ -71,15 +92,15 @@ const IndexPage: React.SFC<{}> = (props): JSX.Element => {
         </div>
       </section>
 
-      <AdvantagesSection />
-      <ClassesSection/>
+      <ClassesSection />
+      <PricesSection />
+      <ScheduleSection />
+      <Contacts />
       <ImageGallery />
       <CounterSection />
-      <StaffSection/>
-      <PricesSection />
-      <ScheduleSection/>
-      <NewsSection/>
-      <Contacts />
+      <StaffSection />
+      <AdvantagesSection />
+      <NewsSection />
       {/* <Map /> */}
       <Footer />
       <ScrollTopButton />

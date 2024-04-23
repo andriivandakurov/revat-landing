@@ -6,8 +6,17 @@
   align-items: center;
 
   li {
-    margin: 0 11px;
+    padding: 0;
     height: 18px;
+
+    a {
+      display: inline-block;
+      padding: 0 12px;
+      text-decoration: none;
+      outline: none;
+      border: none;
+      height: 18px;
+    }
 
     object,
     img {
@@ -30,7 +39,6 @@
 
     @include mobile {
       li {
-        width: 25px;
         height: unset;
         a {
           height: 25px;
@@ -40,16 +48,16 @@
   }
 }
 
-.open {
-  @include mobile {
-    .socials {
-      display: flex;
-      position: fixed;
-      right: 40px;
-      z-index: 200;
-    }
-  }
-}
+// .open {
+//   @include mobile {
+//     .socials {
+//       display: flex;
+//       position: fixed;
+//       right: 40px;
+//       z-index: 200;
+//     }
+//   }
+// }
 
 .footer {
   @include mobile {

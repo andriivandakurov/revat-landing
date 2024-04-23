@@ -89,10 +89,11 @@
 
       span {
         text-align: left;
+        min-width: 180px;
       }
     }
 
-    object {
+    object, img {
       width: 40px;
       pointer-events: none;
       max-height: 50px;

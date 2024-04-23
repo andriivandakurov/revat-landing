@@ -25,8 +25,16 @@ const getPricesMarkup = (): JSX.Element[] => {
         description: 'Cамостійне тренування без тренера',
         options: [
           {
+            name: 'Денний (8:00-17:00)',
+            price: 699,
+          },
+          {
             name: 'Безлім',
-            price: 1300,
+            price: 999,
+          },
+          {
+            name: 'Безлім + програма тренувань від сертифікованого тренера з кросфіту CF lvl2',
+            price: 1699,
           },
         ],
       },
@@ -35,52 +43,58 @@ const getPricesMarkup = (): JSX.Element[] => {
         options: [
           {
             name: '8 занять',
-            price: 1400,
+            price: 1799,
           },
           {
             name: '12 занять',
-            price: 1550,
+            price: 1999,
           },
           {
             name: 'Безлім',
-            price: 1700,
+            price: 2399,
           },
           {
             name: 'Разове',
-            price: 250,
+            price: 349,
           },
           {
             name: '36 занять (3 місяці)',
-            price: 4350,
+            price: 4999,
           },
           {
             name: '72 занять (6 місяців)',
-            price: 8400,
+            price: 8999,
           },
         ],
       },
       {
-        sectionName: 'Спліти',
-        description: 'Група до 4 людей, гнучкий графік',
+        sectionName: 'Додатки до абонементів',
         options: [
           {
-            name: '10 занять',
-            price: 3600,
+            name: 'Base (вода 0.5/0.8/1.5л)',
+            price: 239,
           },
+          {
+            name: 'Comfort (вода 0.5/0.8/1.5л, протеїновий коктейль/батончик + рушник + шафка для зберігання одягу)',
+            price: 1599,
+          },
+        ],
+      },
+      {
+        sectionName: 'Важка атлетика (2 години)',
+        options: [
           {
             name: 'Разове заняття',
-            price: 400,
+            price: 349,
           },
-          {
-            name: 'в сертифікованого тренера з кросфіту CF lvl2',
-          },
-          {
-            name: '10 занять',
-            price: 4500,
-          },
+        ],
+      },
+      {
+        sectionName: 'Мобіліті (1 година)',
+        options: [
           {
             name: 'Разове заняття',
-            price: 500,
+            price: 250,
           },
         ],
       },
@@ -90,56 +104,127 @@ const getPricesMarkup = (): JSX.Element[] => {
           'Тільки ти, тренер і слабкі сторони, над якими ви працюєте',
         options: [
           {
-            name: '10 занять',
-            price: 4000,
+            name: (
+              <span className='font-weight-600'>1 тренування</span>
+            ),
           },
           {
-            name: '50 занять',
-            price: 17500,
+            name: 'з тренером 1 категорії',
+            price: 499,
           },
           {
-            name: 'Разове заняття',
-            price: 450,
+            name: 'з тренером 2 категорії',
+            price: 599,
+          },
+          {
+            name: 'з тренером 3 категорії',
+            price: 699,
+          },
+          {
+            name: (
+              <span className='font-weight-600'>10 занять</span>
+            ),
+          },
+          {
+            name: 'з тренером 1 категорії',
+            price: 3999,
+          },
+          {
+            name: 'з тренером 2 категорії',
+            price: 4999,
+          },
+          {
+            name: 'з тренером 3 категорії',
+            price: 5999,
+          },
+          {
+            name: (
+              <span className='font-weight-600'>50 занять</span>
+            ),
+          },
+          {
+            name: 'з тренером 1 категорії',
+            price: 17999,
+          },
+          {
+            name: 'з тренером 2 категорії',
+            price: 22499,
+          },
+          {
+            name: 'з тренером 3 категорії',
+            price: 26999,
           },
         ],
       },
       {
-        sectionName: (
-          <span>
-            Персональні тренування в сертифікованого тренера з кросфіту
-            CF&nbsp;lvl2
-          </span>
-        ),
+        sectionName: 'Спліти',
+        description: 'Група до 4 людей, гнучкий графік',
         options: [
           {
-            name: '10 занять',
-            price: 5000,
+            name: (
+              <span className='font-weight-600'>1 тренування</span>
+            ),
           },
           {
-            name: '50 занять',
-            price: 22500,
+            name: 'з тренером 1 категорії',
+            price: 399,
           },
           {
-            name: 'Разове заняття',
-            price: 550,
+            name: 'з тренером 2 категорії',
+            price: 499,
+          },
+          {
+            name: 'з тренером 3 категорії',
+            price: 599,
+          },
+          {
+            name: (
+              <span className='font-weight-600'>10 занять</span>
+            ),
+          },
+          {
+            name: 'з тренером 1 категорії',
+            price: 3999,
+          },
+          {
+            name: 'з тренером 2 категорії',
+            price: 4499,
+          },
+          {
+            name: 'з тренером 3 категорії',
+            price: 5499,
           },
         ],
       },
       {
-        sectionName: 'Важка атлетика',
+        sectionName: 'Сауна',
+        description: 'Доступна тільки в залі на вул. Кульпарківській 93',
         options: [
           {
-            name: 'Разове заняття',
-            price: 250,
+            name: 'Разове відвідування',
+            price: 199,
+          },
+          {
+            name: (
+              <span className='font-weight-600'>Абонементи</span>
+            ),
+          },
+          {
+            name: 'на 4 відвідування (1 міс)',
+            price: 699,
+          },
+          {
+            name: 'на 8 відвідування (2 міс)',
+            price: 1199,
           },
         ],
       },
       {
-        sectionName: 'Мобіліті',
+        sectionName: 'Онлайн тренування',
         options: [
           {
-            name: 'Разове заняття',
-            price: 250,
+            name: 'Програма тренувань на місяць',
+            price: 1500,
           },
         ],
       },
