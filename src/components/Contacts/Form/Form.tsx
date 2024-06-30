@@ -54,7 +54,7 @@ const Form: React.SFC<Props> = ({ activeTab, tabClick }) => {
             method="POST"
             onSubmit={handleSubmit}
           >
-            <h3>Записатись на безкоштовне треннування</h3>
+            <h3>Записатись на безкоштовне тренування</h3>
 
             <div className="buttons-container">
               <button className={`button ${isActiveTab(Tabs.revat1)}`} onClick={() => tabClick(Tabs.revat1)} type='button'>
