@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Revat gym",
   "main": "index.js",
+  "engines": {
+    "node": "10.24.1"
+  },
   "scripts": {
     "clean": "rimraf public",
     "build": "gatsby build",

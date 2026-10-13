@@ -26,15 +26,15 @@ const getPricesMarkup = (): JSX.Element[] => {
         options: [
           {
             name: 'Денний (8:00-17:00)',
-            price: 699,
-          },
-          {
-            name: 'Безлім',
             price: 999,
           },
           {
+            name: 'Безлім',
+            price: 1399,
+          },
+          {
             name: 'Безлім + програма тренувань від сертифікованого тренера з кросфіту CF lvl2',
-            price: 1699,
+            price: 1999,
           },
         ],
       },
@@ -43,27 +43,27 @@ const getPricesMarkup = (): JSX.Element[] => {
         options: [
           {
             name: '8 занять',
-            price: 1799,
+            price: 2099,
           },
           {
             name: '12 занять',
-            price: 1999,
-          },
-          {
-            name: 'Безлім',
             price: 2399,
           },
           {
+            name: 'Безлім',
+            price: 2649,
+          },
+          {
             name: 'Разове',
-            price: 349,
+            price: 399,
           },
           {
             name: '36 занять (3 місяці)',
-            price: 4999,
+            price: 6199,
           },
           {
             name: '72 занять (6 місяців)',
-            price: 8999,
+            price: 11999,
           },
         ],
       },
@@ -85,7 +85,7 @@ const getPricesMarkup = (): JSX.Element[] => {
         options: [
           {
             name: 'Разове заняття',
-            price: 349,
+            price: 399,
           },
         ],
       },
@@ -94,7 +94,7 @@ const getPricesMarkup = (): JSX.Element[] => {
         options: [
           {
             name: 'Разове заняття',
-            price: 250,
+            price: 299,
           },
         ],
       },
@@ -110,15 +110,15 @@ const getPricesMarkup = (): JSX.Element[] => {
           },
           {
             name: 'з тренером 1 категорії',
-            price: 499,
+            price: 549,
           },
           {
             name: 'з тренером 2 категорії',
-            price: 599,
+            price: 649,
           },
           {
             name: 'з тренером 3 категорії',
-            price: 699,
+            price: 749,
           },
           {
             name: (
@@ -127,15 +127,15 @@ const getPricesMarkup = (): JSX.Element[] => {
           },
           {
             name: 'з тренером 1 категорії',
-            price: 3999,
+            price: 4499,
           },
           {
             name: 'з тренером 2 категорії',
-            price: 4999,
+            price: 5499,
           },
           {
             name: 'з тренером 3 категорії',
-            price: 5999,
+            price: 6499,
           },
           {
             name: (
@@ -144,55 +144,15 @@ const getPricesMarkup = (): JSX.Element[] => {
           },
           {
             name: 'з тренером 1 категорії',
-            price: 17999,
+            price: 20245,
           },
           {
             name: 'з тренером 2 категорії',
-            price: 22499,
+            price: 24745,
           },
           {
             name: 'з тренером 3 категорії',
-            price: 26999,
-          },
-        ],
-      },
-      {
-        sectionName: 'Спліти',
-        description: 'Група до 4 людей, гнучкий графік',
-        options: [
-          {
-            name: (
-              <span className='font-weight-600'>1 тренування</span>
-            ),
-          },
-          {
-            name: 'з тренером 1 категорії',
-            price: 399,
-          },
-          {
-            name: 'з тренером 2 категорії',
-            price: 499,
-          },
-          {
-            name: 'з тренером 3 категорії',
-            price: 599,
-          },
-          {
-            name: (
-              <span className='font-weight-600'>10 занять</span>
-            ),
-          },
-          {
-            name: 'з тренером 1 категорії',
-            price: 3999,
-          },
-          {
-            name: 'з тренером 2 категорії',
-            price: 4499,
-          },
-          {
-            name: 'з тренером 3 категорії',
-            price: 5499,
+            price: 29245,
           },
         ],
       },
@@ -224,7 +184,7 @@ const getPricesMarkup = (): JSX.Element[] => {
         options: [
           {
             name: 'Програма тренувань на місяць',
-            price: 1500,
+            price: 1699,
           },
         ],
       },
