@@ -1,0 +1,42 @@
+name: Fetch Reviews
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch-reviews:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+      ALTEGIO_API_TOKEN: ${{ secrets.ALTEGIO_API_TOKEN }}
+      ALTEGIO_LOCATION_ID_K: ${{ secrets.ALTEGIO_LOCATION_ID_K }}
+      ALTEGIO_LOCATION_ID_Z: ${{ secrets.ALTEGIO_LOCATION_ID_Z }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Google reviews (Кульпарківська)
+        run: |
+          curl -s "https://places.googleapis.com/v1/places/ChIJFQEJd2fnOkcRncGKRjFCurM?fields=reviews,rating&key=$GOOGLE_PLACES_API_KEY" \
+            -H "X-Goog-FieldMask: reviews,rating" > /tmp/google-k.json
+
+      - name: Fetch Altegio reviews
+        run: |
+          curl -s "https://api.alteg.io/api/v1/comments/$ALTEGIO_LOCATION_ID_K" \
+            -H "Authorization: Bearer $ALTEGIO_API_TOKEN" > /tmp/altegio-k.json
+          curl -s "https://api.alteg.io/api/v1/comments/$ALTEGIO_LOCATION_ID_Z" \
+            -H "Authorization: Bearer $ALTEGIO_API_TOKEN" > /tmp/altegio-z.json
+
+      - name: Process reviews
+        run: node .github/scripts/process-reviews.mjs
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/data/reviews.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update reviews from APIs" && git push)
