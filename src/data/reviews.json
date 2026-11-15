@@ -3,8 +3,39 @@
     "kulparkivska": {
       "name": "Кульпарківська 93",
       "google": {
-        "reviews": [],
-        "rating": null
+        "reviews": [
+          {
+            "text": "This was my first attempt at CrossFit, and I'm impressed!\nThe cool gym and trainer! I'm using group training and it's the best thing that you can get for a newbie like me :D",
+            "rating": 5,
+            "author_name": "Denys Vanat",
+            "time": "2025-06-23T10:00:55.921402675Z"
+          },
+          {
+            "text": "Top gym with everything you need, incredibly friendly atmosphere, professional support and cool workouts. Yes, this is a real place of strength. ☺️ I go to training with incredible pleasure. 🤩",
+            "rating": 5,
+            "author_name": "Viktoriia Nalyvaiko",
+            "time": "2025-10-15T10:31:28.362686684Z"
+          },
+          {
+            "text": "A good crossfit gym with a trendy renovation and constantly updated equipment. It's spacious and pleasant. The trainers are qualified and attentive, skillfully adapting to the needs of the athlete. There are offers of subscriptions in different price categories. Suitable for both beginners and professional athletes!",
+            "rating": 5,
+            "author_name": "Квітка Секунда",
+            "time": "2026-02-03T10:53:50.511184698Z"
+          },
+          {
+            "text": "Everything is as it should be: a good, spacious hall, good equipment, good changing room, cool service in general.\n\nI really like that the trainer (Orest) is always involved in the group training, monitors and corrects if something is done wrong. He does not have the biggest mistake of some trainers, who allow themselves to sit on their phones during group classes",
+            "rating": 5,
+            "author_name": "Danyil Shkoropad",
+            "time": "2025-06-23T10:44:45.748328585Z"
+          },
+          {
+            "text": "Top place with top people. Very comfortable training room, good team of trainers, results will not take long to come. There are different training options: Personal, group or just open gym. One of the best CrossFit halls. There is also a sauna, table tennis.",
+            "rating": 5,
+            "author_name": "Dymik Dymik",
+            "time": "2025-06-23T10:07:31.717025660Z"
+          }
+        ],
+        "rating": 5
       },
       "altegio": {
         "reviews": [],
