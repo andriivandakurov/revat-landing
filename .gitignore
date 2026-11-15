@@ -59,7 +59,6 @@ typings/
 # Astro build output
 dist/
 .astro/
-*.astro
 
 # Mac files
 .DS_Store

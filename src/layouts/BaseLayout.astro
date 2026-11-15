@@ -1,0 +1,48 @@
+---
+import '../styles/styles.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "REVAT — кросфіт зал у Львові",
+  description = "Перший кросфіт зал у Львові. Групові та персональні тренування, важка атлетика, мобіліті, OpenGym. Дві локації: Кульпарківська 93 та Жовківська 22."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;1,700;1,800;1,900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/logo-revat.png">
+</head>
+<body>
+  <slot />
+
+  <script src="/main.js" defer></script>
+</body>
+</html>
+
+<style is:global>
+  /* Global styles loaded via CSS link */
+</style>
