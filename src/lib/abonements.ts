@@ -1,6 +1,7 @@
 // Maps Altegio membership types (src/data/altegio-abonements.json) to the
 // price tabs shown on the abonements page.
 
+// Network-level purchase page shared by all locations.
 const PURCHASE_BASE = 'https://o2873.alteg.io/loyalty/subscription';
 
 // Altegio membership type IDs shown with the "НАЙПОПУЛЯРНІШИЙ" badge.
@@ -16,6 +17,11 @@ export type AltegioAbonement = {
   united_balance_services_count: number;
   period: number;
   period_unit_id: number;
+};
+
+export type AltegioAbonementsData = {
+  items: AltegioAbonement[];
+  onlineByLocation: { kulparkivska: number[]; zhovkivska: number[] };
 };
 
 export type PriceItem = {
@@ -77,7 +83,7 @@ const splitTitle = (item: AltegioAbonement): { title: string; subtitle: string }
   return { title, subtitle };
 };
 
-export const buildPriceCategories = (items: AltegioAbonement[]): PriceCategory[] => {
+export const buildPriceCategories = ({ items, onlineByLocation }: AltegioAbonementsData): PriceCategory[] => {
   const sellable = items.filter(
     (item) => item.is_online_sale_enabled && !item.is_archived && item.online_sale_price > 0,
   );
@@ -85,19 +91,19 @@ export const buildPriceCategories = (items: AltegioAbonement[]): PriceCategory[]
   return CATEGORIES.map((category) => {
     const priceItems = sellable
       .filter((item) => categoryOf(item.title) === category.id)
+      .filter((item) => onlineByLocation.kulparkivska.includes(item.id) || onlineByLocation.zhovkivska.includes(item.id))
       .sort((a, b) => a.online_sale_price - b.online_sale_price)
       .map((item) => {
         const { title, subtitle } = splitTitle(item);
-        const url = `${PURCHASE_BASE}/${item.id}`;
+        const onlineAt = (location: keyof AltegioAbonementsData['onlineByLocation']) =>
+          onlineByLocation[location].includes(item.id) ? `${PURCHASE_BASE}/${item.id}` : '';
         return {
           id: String(item.id),
           title,
           subtitle,
           price: item.online_sale_price,
           popular: POPULAR_IDS.includes(item.id),
-          // Location attachment isn't in the chain response yet, so every online
-          // subscription is linked to Kulparkivska only.
-          urls: { kulparkivska: url, zhovkivska: '' },
+          urls: { kulparkivska: onlineAt('kulparkivska'), zhovkivska: onlineAt('zhovkivska') },
         };
       });
 

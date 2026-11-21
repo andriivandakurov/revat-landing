@@ -1,6 +1,43 @@
 {
-  "fetchedAt": "2026-11-03T17:22:01.286Z",
+  "fetchedAt": "2026-11-17T12:30:12.108Z",
   "chainId": "1156945",
+  "onlineByLocation": {
+    "kulparkivska": [
+      473183,
+      473184,
+      473187,
+      473193,
+      473194,
+      473195,
+      473196,
+      473197,
+      473232,
+      473233,
+      473234,
+      473235,
+      517395,
+      517396,
+      517399,
+      517400,
+      524391
+    ],
+    "zhovkivska": [
+      473183,
+      473184,
+      473187,
+      473193,
+      473194,
+      473195,
+      473196,
+      473197,
+      473232,
+      473233,
+      473234,
+      473235,
+      517395,
+      517396
+    ]
+  },
   "items": [
     {
       "id": 440517,
@@ -139,213 +176,6 @@
         ]
       },
       "abonements_count": 4
-    },
-    {
-      "id": 458403,
-      "salon_group_id": 1156945,
-      "category_id": null,
-      "title": "Спліт тренування - 10 занять (з тренером 1 категорії)",
-      "period": 2,
-      "period_unit_id": 3,
-      "allow_freeze": false,
-      "freeze_limit": 0,
-      "freeze_limit_unit_id": 1,
-      "is_booking_when_frozen_allowed": false,
-      "is_allow_empty_code": true,
-      "is_united_balance": true,
-      "is_united_balance_unlimited": false,
-      "united_balance_services_count": 10,
-      "is_code_required": false,
-      "balance_edit_type_id": 2,
-      "cost": 3999,
-      "is_archived": false,
-      "date_archived": null,
-      "expiration_type_id": 1,
-      "expiration_type_title": "During the first visit",
-      "service_price_correction": false,
-      "is_online_sale_enabled": false,
-      "online_sale_title": "Спліт тренування - 10 занять (з тренером 1 категорії)",
-      "online_sale_description": "",
-      "online_sale_price": 0,
-      "autoactivation_time": 1,
-      "autoactivation_time_unit_id": 1,
-      "category": "standard",
-      "weight": 31,
-      "balance_container": {
-        "links": [
-          {
-            "count": 0,
-            "is_unlimited": false,
-            "service": {
-              "id": 12216618,
-              "category_id": 12187517,
-              "is_category": false,
-              "title": "Разове спліт тренування 1 категорія",
-              "online_sale_title": "",
-              "is_chain": true,
-              "chain_price_min": 399,
-              "chain_price_max": 399,
-              "category": {
-                "id": 12187517,
-                "category_id": 1,
-                "is_category": true,
-                "title": "Тренування",
-                "online_sale_title": "",
-                "is_chain": true,
-                "chain_price_min": 0,
-                "chain_price_max": 0,
-                "category": {
-                  "id": 1,
-                  "category_id": 0,
-                  "is_category": false,
-                  "title": "%root",
-                  "online_sale_title": "",
-                  "category": []
-                }
-              }
-            }
-          }
-        ]
-      },
-      "abonements_count": 0
-    },
-    {
-      "id": 458407,
-      "salon_group_id": 1156945,
-      "category_id": null,
-      "title": "Спліт тренування - 10 занять (з тренером 2 категорії)",
-      "period": 2,
-      "period_unit_id": 3,
-      "allow_freeze": false,
-      "freeze_limit": 0,
-      "freeze_limit_unit_id": 1,
-      "is_booking_when_frozen_allowed": false,
-      "is_allow_empty_code": true,
-      "is_united_balance": true,
-      "is_united_balance_unlimited": false,
-      "united_balance_services_count": 10,
-      "is_code_required": false,
-      "balance_edit_type_id": 2,
-      "cost": 4499,
-      "is_archived": false,
-      "date_archived": null,
-      "expiration_type_id": 1,
-      "expiration_type_title": "During the first visit",
-      "service_price_correction": false,
-      "is_online_sale_enabled": false,
-      "online_sale_title": "Спліт тренування - 10 занять (з тренером 2 категорії)",
-      "online_sale_description": "",
-      "online_sale_price": 0,
-      "autoactivation_time": 1,
-      "autoactivation_time_unit_id": 1,
-      "category": "standard",
-      "weight": 32,
-      "balance_container": {
-        "links": [
-          {
-            "count": 0,
-            "is_unlimited": false,
-            "service": {
-              "id": 12216619,
-              "category_id": 12187517,
-              "is_category": false,
-              "title": "Разове спліт тренування 2 категорія",
-              "online_sale_title": "",
-              "is_chain": true,
-              "chain_price_min": 0,
-              "chain_price_max": 0,
-              "category": {
-                "id": 12187517,
-                "category_id": 1,
-                "is_category": true,
-                "title": "Тренування",
-                "online_sale_title": "",
-                "is_chain": true,
-                "chain_price_min": 0,
-                "chain_price_max": 0,
-                "category": {
-                  "id": 1,
-                  "category_id": 0,
-                  "is_category": false,
-                  "title": "%root",
-                  "online_sale_title": "",
-                  "category": []
-                }
-              }
-            }
-          }
-        ]
-      },
-      "abonements_count": 2
-    },
-    {
-      "id": 458409,
-      "salon_group_id": 1156945,
-      "category_id": null,
-      "title": "Спліт тренування - 10 занять (з тренером 3 категорії)",
-      "period": 2,
-      "period_unit_id": 3,
-      "allow_freeze": false,
-      "freeze_limit": 0,
-      "freeze_limit_unit_id": 1,
-      "is_booking_when_frozen_allowed": false,
-      "is_allow_empty_code": true,
-      "is_united_balance": true,
-      "is_united_balance_unlimited": false,
-      "united_balance_services_count": 10,
-      "is_code_required": false,
-      "balance_edit_type_id": 2,
-      "cost": 5499,
-      "is_archived": false,
-      "date_archived": null,
-      "expiration_type_id": 1,
-      "expiration_type_title": "During the first visit",
-      "service_price_correction": false,
-      "is_online_sale_enabled": false,
-      "online_sale_title": "Спліт тренування - 10 занять (з тренером 3 категорії)",
-      "online_sale_description": "",
-      "online_sale_price": 0,
-      "autoactivation_time": 1,
-      "autoactivation_time_unit_id": 1,
-      "category": "standard",
-      "weight": 33,
-      "balance_container": {
-        "links": [
-          {
-            "count": 0,
-            "is_unlimited": false,
-            "service": {
-              "id": 12216620,
-              "category_id": 12187517,
-              "is_category": false,
-              "title": "Разове спліт тренування 3 категорія",
-              "online_sale_title": "",
-              "is_chain": true,
-              "chain_price_min": 0,
-              "chain_price_max": 0,
-              "category": {
-                "id": 12187517,
-                "category_id": 1,
-                "is_category": true,
-                "title": "Тренування",
-                "online_sale_title": "",
-                "is_chain": true,
-                "chain_price_min": 0,
-                "chain_price_max": 0,
-                "category": {
-                  "id": 1,
-                  "category_id": 0,
-                  "is_category": false,
-                  "title": "%root",
-                  "online_sale_title": "",
-                  "category": []
-                }
-              }
-            }
-          }
-        ]
-      },
-      "abonements_count": 0
     },
     {
       "id": 470595,
@@ -532,7 +362,7 @@
           }
         ]
       },
-      "abonements_count": 535
+      "abonements_count": 552
     },
     {
       "id": 473184,
@@ -601,7 +431,7 @@
           }
         ]
       },
-      "abonements_count": 104
+      "abonements_count": 106
     },
     {
       "id": 473187,
@@ -670,7 +500,7 @@
           }
         ]
       },
-      "abonements_count": 140
+      "abonements_count": 144
     },
     {
       "id": 473193,
@@ -680,7 +510,7 @@
       "period": 1,
       "period_unit_id": 3,
       "allow_freeze": true,
-      "freeze_limit": 0,
+      "freeze_limit": 5,
       "freeze_limit_unit_id": 1,
       "is_booking_when_frozen_allowed": false,
       "is_allow_empty_code": true,
@@ -739,7 +569,7 @@
           }
         ]
       },
-      "abonements_count": 936
+      "abonements_count": 962
     },
     {
       "id": 473194,
@@ -749,7 +579,7 @@
       "period": 1,
       "period_unit_id": 3,
       "allow_freeze": true,
-      "freeze_limit": 0,
+      "freeze_limit": 5,
       "freeze_limit_unit_id": 1,
       "is_booking_when_frozen_allowed": false,
       "is_allow_empty_code": true,
@@ -808,7 +638,7 @@
           }
         ]
       },
-      "abonements_count": 820
+      "abonements_count": 841
     },
     {
       "id": 473195,
@@ -818,7 +648,7 @@
       "period": 1,
       "period_unit_id": 3,
       "allow_freeze": true,
-      "freeze_limit": 0,
+      "freeze_limit": 5,
       "freeze_limit_unit_id": 1,
       "is_booking_when_frozen_allowed": false,
       "is_allow_empty_code": true,
@@ -877,7 +707,7 @@
           }
         ]
       },
-      "abonements_count": 181
+      "abonements_count": 186
     },
     {
       "id": 473196,
@@ -887,7 +717,7 @@
       "period": 3,
       "period_unit_id": 3,
       "allow_freeze": true,
-      "freeze_limit": 0,
+      "freeze_limit": 10,
       "freeze_limit_unit_id": 1,
       "is_booking_when_frozen_allowed": false,
       "is_allow_empty_code": true,
@@ -946,7 +776,7 @@
           }
         ]
       },
-      "abonements_count": 58
+      "abonements_count": 60
     },
     {
       "id": 473197,
@@ -956,7 +786,7 @@
       "period": 6,
       "period_unit_id": 3,
       "allow_freeze": true,
-      "freeze_limit": 0,
+      "freeze_limit": 20,
       "freeze_limit_unit_id": 1,
       "is_booking_when_frozen_allowed": false,
       "is_allow_empty_code": true,
@@ -1094,7 +924,7 @@
       "period": 2,
       "period_unit_id": 3,
       "allow_freeze": true,
-      "freeze_limit": 0,
+      "freeze_limit": 10,
       "freeze_limit_unit_id": 1,
       "is_booking_when_frozen_allowed": false,
       "is_allow_empty_code": true,
@@ -1217,7 +1047,7 @@
           }
         ]
       },
-      "abonements_count": 214
+      "abonements_count": 220
     },
     {
       "id": 473233,
@@ -1360,7 +1190,7 @@
       "period": 2,
       "period_unit_id": 3,
       "allow_freeze": true,
-      "freeze_limit": 0,
+      "freeze_limit": 10,
       "freeze_limit_unit_id": 1,
       "is_booking_when_frozen_allowed": false,
       "is_allow_empty_code": true,
@@ -1483,7 +1313,7 @@
           }
         ]
       },
-      "abonements_count": 127
+      "abonements_count": 131
     },
     {
       "id": 473235,
@@ -1818,7 +1648,7 @@
           }
         ]
       },
-      "abonements_count": 89
+      "abonements_count": 111
     },
     {
       "id": 517396,
@@ -1887,7 +1717,7 @@
           }
         ]
       },
-      "abonements_count": 16
+      "abonements_count": 28
     },
     {
       "id": 517399,
@@ -1956,7 +1786,7 @@
           }
         ]
       },
-      "abonements_count": 64
+      "abonements_count": 88
     },
     {
       "id": 517400,
@@ -2094,7 +1924,7 @@
           }
         ]
       },
-      "abonements_count": 15
+      "abonements_count": 33
     }
   ]
 }

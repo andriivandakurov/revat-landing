@@ -35,6 +35,26 @@ async function getPage(chainId, page) {
   return body;
 }
 
+// Membership types sold online at one location. Location endpoints list the
+// types attached to that location, so only these can be bought there.
+async function getOnlineIdsForLocation(locationId) {
+  const ids = [];
+  for (let page = 1; ; page++) {
+    const url = new URL(`${API}/locations/${locationId}/loyalty/abonement_types/search`);
+    url.searchParams.set('page', String(page));
+    url.searchParams.set('page_size', '100');
+    const res = await fetch(url, { headers: headers() });
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok || body.success === false) {
+      throw new Error(`Altegio responded ${res.status} for location ${locationId}: ${body.meta?.message ?? 'unknown error'}`);
+    }
+    const data = body.data ?? [];
+    ids.push(...data.filter((t) => t.is_online_sale_enabled && !t.is_archived).map((t) => t.id));
+    if (data.length < 100) break;
+  }
+  return ids;
+}
+
 async function main() {
   const chainId = env('ALTEGIO_CHAIN_ID');
   const items = [];
@@ -46,8 +66,13 @@ async function main() {
     if (data.length < PAGE_LIMIT) break;
   }
 
-  writeFileSync(OUT, JSON.stringify({ fetchedAt: new Date().toISOString(), chainId, items }, null, 2) + '\n');
-  console.log(`Saved ${items.length} membership types to ${OUT}`);
+  const onlineByLocation = {
+    kulparkivska: await getOnlineIdsForLocation(env('ALTEGIO_LOCATION_ID_K')),
+    zhovkivska: await getOnlineIdsForLocation(env('ALTEGIO_LOCATION_ID_Z')),
+  };
+
+  writeFileSync(OUT, JSON.stringify({ fetchedAt: new Date().toISOString(), chainId, onlineByLocation, items }, null, 2) + '\n');
+  console.log(`Saved ${items.length} membership types; online at kulparkivska: ${onlineByLocation.kulparkivska.length}, zhovkivska: ${onlineByLocation.zhovkivska.length}`);
 }
 
 main().catch((err) => {

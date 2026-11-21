@@ -5,7 +5,7 @@ import { locations } from '../data/prices';
 import { buildPriceCategories } from '../lib/abonements';
 import altegioAbonements from '../data/altegio-abonements.json';
 
-const priceCategories = buildPriceCategories(altegioAbonements.items);
+const priceCategories = buildPriceCategories(altegioAbonements);
 
 const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Math.round(num));
 ---
@@ -42,10 +42,10 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     <div class="container hero-in">
       <p class="hero-kicker">Перший кросфіт зал у Львові</p>
       <h1 class="display">Ставай кращим<br>разом з нами!</h1>
-      <p class="hero-lead">Групові й персональні тренування з кросфіту, важка атлетика, мобіліті та OpenGym. Для новачків і для атлетів, які готуються до змагань.</p>
+      <p class="hero-lead">Групові й персональні тренування з кросфіту, важка атлетика та OpenGym. Для новачків і для атлетів, які готуються до змагань.</p>
       <div class="hero-ctas">
         <a href="#price" class="btn btn--red">Купити абонемент онлайн</a>
-        <a href="#trial" class="btn btn--outline">Перше заняття — безкоштовно</a>
+        <a href="#contacts" class="btn btn--outline">Перше заняття — безкоштовно</a>
       </div>
       <div class="locations">
         <a href="https://maps.app.goo.gl/2HWWT2xW99jxmXtC7" class="loc">
@@ -81,7 +81,6 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     <h2 class="display h2">Обери свій формат</h2>
     <div class="cards-3">
       <article class="class-card">
-        <div class="photo-ph">[Фото: Групові тренування]</div>
         <div class="class-body">
           <div class="class-head"><h3 class="h3">Групові тренування</h3><span class="tag">60 хв</span></div>
           <p>Групи 6–20 осіб за стабільним графіком. Вивчиш базові навички кросфіту, а навантаження підберуть саме під тебе — від новачка до профі.</p>
@@ -89,7 +88,6 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         </div>
       </article>
       <article class="class-card">
-        <div class="photo-ph">[Фото: Персональні тренування]</div>
         <div class="class-body">
           <div class="class-head"><h3 class="h3">Персональні тренування</h3><span class="tag">60+ хв</span></div>
           <p>Програма під твої цілі, рекомендації щодо харчування, сну й режиму. Підготовка до змагань, зокрема Race Nation та Spartan Race.</p>
@@ -97,7 +95,6 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         </div>
       </article>
       <article class="class-card">
-        <div class="photo-ph">[Фото: Важка атлетика]</div>
         <div class="class-body">
           <div class="class-head"><h3 class="h3">Важка атлетика</h3><span class="tag">120 хв</span></div>
           <p>Щотижневий авторський клас по суботах: техніка вправ зі штангою та робота з важкими вагами під наглядом тренера.</p>
@@ -105,15 +102,6 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         </div>
       </article>
       <article class="class-card">
-        <div class="photo-ph">[Фото: Мобіліті]</div>
-        <div class="class-body">
-          <div class="class-head"><h3 class="h3">Мобіліті</h3><span class="tag">60 хв</span></div>
-          <p>Гнучкість м'язів, мобільність суглобів і робота з проблемними зонами. Особливо для тих, хто весь день сидить.</p>
-          <a href="#price" class="link-arrow">Ціни →</a>
-        </div>
-      </article>
-      <article class="class-card">
-        <div class="photo-ph">[Фото: OpenGym]</div>
         <div class="class-body">
           <div class="class-head"><h3 class="h3">OpenGym</h3><span class="tag">без тренера</span></div>
           <p>Самостійні тренування у вільний час. Можна додати програму від сертифікованого тренера CF-L2.</p>
@@ -121,7 +109,6 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         </div>
       </article>
       <article class="class-card">
-        <div class="photo-ph">[Фото: Online]</div>
         <div class="class-body">
           <div class="class-head"><h3 class="h3">Online</h3><span class="tag">щомісяця</span></div>
           <p>Професійна програма для дому, звичайного залу чи кросфіт-боксу — з прогресіями та урахуванням травм.</p>
@@ -166,7 +153,7 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         <p class="price-desc">{category.description}</p>
         <div class="price-grid">
           {category.items.map((item) => (
-            <article class={`price-card ${item.popular ? 'popular' : ''}`}>
+            <article class={`price-card ${item.popular ? 'popular' : ''}`} data-locations={Object.entries(item.urls).filter(([, url]) => url).map(([key]) => key).join(' ')}>
               {item.popular && <span class="popular-badge">НАЙПОПУЛЯРНІШИЙ</span>}
               <h3 class="price-title">{item.title}</h3>
               <p class="price-subtitle">{item.subtitle}</p>
@@ -216,10 +203,9 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         <div class="sched-row"><div><span class="days">Пн, Ср, Пт</span><span class="kind">Групові</span></div><div class="times"><span class="time">08:00</span><span class="time">18:00</span><span class="time">19:00</span><span class="time">20:00</span></div></div>
         <div class="sched-row"><div><span class="days">Вт, Чт</span><span class="kind">Групові</span></div><div class="times"><span class="time">18:00</span><span class="time">19:00</span></div></div>
         <div class="sched-row"><div><span class="days">Субота</span><span class="kind">Групові</span></div><div class="times"><span class="time">11:00</span></div></div>
-        <div class="sched-row"><div><span class="days">Субота</span><span class="kind">Мобіліті</span></div><div class="times"><span class="time">12:00</span></div></div>
       </div>
     </div>
-    <p class="hours-note">Зали відчинені: Пн–Пт 7:00–21:00 · Сб 9:00–14:00 · Нд — вихідний</p>
+    <p class="hours-note">Кульпарківська 93: щодня 6:00–22:00<br>Жовківська 22: Пн–Пт 7:00–21:00 · Сб 9:00–14:00 · Нд — вихідний</p>
   </div>
 </section>
 
@@ -268,18 +254,29 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     </div>
     <div class="review-grid">
       {(() => {
-        const allReviews = [];
         const locs = reviewsData.locations;
+        const hasText = (review) => (review.text || review.comment || '').trim() !== '';
 
-        // Collect reviews from all sources and locations
-        locs.kulparkivska.google.reviews.forEach(r => allReviews.push({...r, source: 'google', location: 'kulparkivska'}));
-        locs.kulparkivska.altegio.reviews.forEach(r => allReviews.push({...r, source: 'altegio', location: 'kulparkivska'}));
-        locs.zhovkivska.google.reviews.forEach(r => allReviews.push({...r, source: 'google', location: 'zhovkivska'}));
-        locs.zhovkivska.altegio.reviews.forEach(r => allReviews.push({...r, source: 'altegio', location: 'zhovkivska'}));
+        // Reviews with text, grouped by location and platform
+        const groups = [
+          ['kulparkivska', 'google'], ['kulparkivska', 'altegio'],
+          ['zhovkivska', 'google'], ['zhovkivska', 'altegio'],
+        ].map(([location, source]) =>
+          locs[location][source].reviews
+            .filter(hasText)
+            .map((r) => ({ ...r, source, location }))
+        );
+
+        // One review from each location and platform first, then the rest
+        const featured = groups.map((list) => list[0]).filter(Boolean);
+        const rest = groups.flatMap((list) => list.slice(1));
+        const allReviews = [...featured, ...rest];
 
         return allReviews.slice(0, 6).map((review) => {
           const isGoogle = review.source === 'google';
-          const date = isGoogle ? new Date(review.time * 1000).toLocaleDateString('uk-UA') : new Date(review.created_at).toLocaleDateString('uk-UA');
+          // Google times are Unix seconds (Жовківська) or ISO strings (Кульпарківська); Altegio uses created_at
+          const rawDate = isGoogle ? (typeof review.time === 'number' ? review.time * 1000 : review.time) : review.created_at;
+          const date = new Date(rawDate).toLocaleDateString('uk-UA');
           const locName = review.location === 'kulparkivska' ? 'Кульпарківська' : 'Жовківська';
           return (
             <article class="review">
@@ -307,15 +304,25 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     <div class="trial" id="trial">
       <h2 class="display">Перше тренування — безкоштовно</h2>
       <p class="trial-lead">Залиш контакти — ми зв'яжемся з тобою і підберем зручний час.</p>
-      <form class="form" id="trial-form">
-        <fieldset>
-          <legend>Локація</legend>
-          <label class="radio"><input type="radio" name="location" value="kulparkivska" checked> Кульпарківська 93</label>
-          <label class="radio"><input type="radio" name="location" value="zhovkivska"> Жовківська 22</label>
-        </fieldset>
+      <form class="form" id="trial-form" novalidate>
+        <div class="trial-location">
+          <p class="price-location-label">Локація:</p>
+          <div class="location-buttons">
+            {Object.entries(locations).map(([key, location], idx) => (
+              <button type="button" class={`location-btn ${idx === 0 ? 'active' : ''}`} data-trial-location={key} data-altegio-id={location.altegioId}>
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                {location.name}
+              </button>
+            ))}
+          </div>
+          <input type="hidden" name="location" value="kulparkivska">
+        </div>
         <label class="field">Ім'я та прізвище<input type="text" name="name" autocomplete="name" required></label>
         <label class="field">Телефон<input type="tel" name="phone" autocomplete="tel" placeholder="+380" required></label>
+        <label class="field">Email<input type="email" name="email" autocomplete="email" placeholder="ім'я@приклад.ua" required></label>
+        <label class="field">Дата візиту<input type="date" name="visit_date" required></label>
         <button type="submit" class="btn btn--red">Записатись</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
     <div class="contact-card">
@@ -333,7 +340,7 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
       </div>
       <div>
         <h3 class="h3">Ми відчинені</h3>
-        <p>Пн–Пт 7:00–21:00<br>Сб 9:00–14:00<br>Нд — вихідний</p>
+        <p>Кульпарківська 93: щодня 6:00–22:00<br>Жовківська 22: Пн–Пт 7:00–21:00<br>Сб 9:00–14:00<br>Нд — вихідний</p>
       </div>
     </div>
   </div>
@@ -351,7 +358,7 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     let currentLocation = 'kulparkivska';
 
     // Location switching
-    const locationBtns = document.querySelectorAll('.location-btn');
+    const locationBtns = document.querySelectorAll('.price-location-selector .location-btn');
     locationBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const location = btn.getAttribute('data-location');
@@ -360,6 +367,8 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         // Update active location button
         locationBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+
+        showLocationItems(location);
 
         // Update all buy button URLs
         const buyLinks = document.querySelectorAll('.location-link');
@@ -380,6 +389,132 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
       });
     });
 
+    // Trial form: visit date can be from today up to 7 days ahead
+    const visitDate = document.querySelector('input[name="visit_date"]');
+    if (visitDate) {
+      const toLocalDate = (date) => new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+      const today = new Date();
+      const inWeek = new Date(today);
+      inWeek.setDate(today.getDate() + 7);
+      visitDate.min = toLocalDate(today);
+      visitDate.max = toLocalDate(inWeek);
+    }
+
+    // Mobile menu: toggle the nav and keep aria-expanded in sync
+    const burger = document.querySelector('.burger');
+    const mainNav = document.getElementById('main-nav');
+    burger?.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    // Close the menu when a link is chosen
+    mainNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        burger?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Trial form location: buttons write their value into the hidden field
+    const trialLocationBtns = document.querySelectorAll('[data-trial-location]');
+    const trialLocationInput = document.querySelector('.trial-location input[name="location"]');
+    trialLocationBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        trialLocationBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (trialLocationInput) trialLocationInput.value = btn.getAttribute('data-trial-location');
+      });
+    });
+
+    // Trial form: validate, then POST JSON to the free-visit endpoint
+    const trialForm = document.getElementById('trial-form');
+    if (trialForm) {
+      const FREE_VISIT_URL = 'http://localhost:3000/public/free-visit';
+      const submitBtn = trialForm.querySelector('button[type="submit"]');
+      const status = trialForm.querySelector('.form-status');
+      const fields = trialForm.querySelectorAll('input[name]:not([type="radio"]):not([type="hidden"])');
+      const messages = {
+        400: 'Перевірте виділені поля.',
+        403: 'Цей сайт не може надсилати заявки. Зверніться до студії.',
+        409: 'Зверніться до студії, щоб підтвердити запис.',
+        429: 'Забагато спроб. Спробуйте пізніше.',
+        502: 'Сервіс тимчасово недоступний. Спробуйте пізніше.',
+        503: 'Сервіс тимчасово недоступний. Спробуйте пізніше.',
+      };
+
+      const isValid = (input) => {
+        const value = input.value.trim();
+        if (!value) return !input.required;
+        if (input.name === 'phone') return /^\+?\d{9,15}$/.test(value.replace(/[\s()-]/g, ''));
+        return input.checkValidity();
+      };
+      const showStatus = (message, isError) => {
+        status.textContent = message;
+        status.classList.toggle('is-error', isError);
+      };
+      const markInvalid = (names) => {
+        fields.forEach(input => input.classList.toggle('is-invalid', names.includes(input.name)));
+      };
+
+      fields.forEach(input => {
+        input.addEventListener('input', () => input.classList.remove('is-invalid'));
+      });
+
+      trialForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const invalid = [...fields].filter(input => !isValid(input)).map(input => input.name);
+        markInvalid(invalid);
+        if (invalid.length) {
+          trialForm.querySelector('.is-invalid')?.focus();
+          return;
+        }
+
+        const field = (name) => trialForm.querySelector(`input[name="${name}"]`).value.trim();
+        const selectedLocation = trialForm.querySelector('.trial-location .location-btn.active');
+        const body = {
+          name: field('name'),
+          phone: field('phone'),
+          email: field('email'),
+          visit_date: field('visit_date'),
+          website: '',
+          location_id: Number(selectedLocation.dataset.altegioId),
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.classList.add('is-loading');
+        trialForm.classList.add('is-loading');
+        showStatus('', false);
+        try {
+          const res = await fetch(FREE_VISIT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+          });
+
+          if (res.status === 201) {
+            trialForm.reset();
+            markInvalid([]);
+            showStatus('Дякуємо! Чекаємо вас на тренуванні!', false);
+          } else if (res.status === 400) {
+            // Mark the fields the server reports; if it doesn't say which, mark all of them
+            const data = await res.json().catch(() => ({}));
+            const reported = Array.isArray(data.fields) ? data.fields : Object.keys(data.fields ?? data.errors ?? {});
+            markInvalid(reported.length ? reported : [...fields].map(input => input.name));
+            showStatus(messages[400], true);
+          } else {
+            showStatus(messages[res.status] ?? 'Щось пішло не так. Спробуйте пізніше.', true);
+          }
+        } catch {
+          showStatus('Немає зв’язку з сервером. Спробуйте пізніше.', true);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('is-loading');
+          trialForm.classList.remove('is-loading');
+        }
+      });
+    }
+
     // Price tabs functionality
     const tabButtons = document.querySelectorAll('.price-tab-btn');
     const sections = document.querySelectorAll('.price-section');
@@ -395,6 +530,24 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         document.querySelector(`.price-section[data-tab="${tabId}"]`)?.classList.add('active');
       });
     });
+
+    // Show only subscriptions sold at the selected location; hide tabs left empty
+    const showLocationItems = (location) => {
+      document.querySelectorAll('.price-card').forEach(card => {
+        card.hidden = !card.dataset.locations.split(' ').includes(location);
+      });
+      let activeHidden = false;
+      tabButtons.forEach(btn => {
+        const section = document.querySelector(`.price-section[data-tab="${btn.dataset.tab}"]`);
+        const hasItems = [...section.querySelectorAll('.price-card')].some(card => !card.hidden);
+        btn.hidden = !hasItems;
+        if (!hasItems && btn.classList.contains('active')) activeHidden = true;
+      });
+      if (activeHidden) {
+        tabButtons.forEach(btn => { if (!btn.hidden && !btn.classList.contains('active')) btn.click(); });
+      }
+    };
+    showLocationItems(currentLocation);
 
     // Initialize buy links based on current location
     const buyLinks = document.querySelectorAll('.location-link');
