@@ -1,0 +1,593 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import reviewsData from '../data/reviews.json';
+import { locations } from '../data/prices';
+import { buildPriceCategories } from '../lib/abonements';
+import altegioAbonements from '../data/altegio-abonements.json';
+
+const priceCategories = buildPriceCategories(altegioAbonements);
+
+// Structured data for each gym (schema.org LocalBusiness), matching the visible page
+const gymSchema = (name: string, street: string, postalCode: string, geo: { latitude: number; longitude: number }, hours: object[], profileUrl: string) => ({
+  '@context': 'https://schema.org',
+  '@type': 'SportsActivityLocation',
+  name,
+  url: 'https://revatgym.com/',
+  image: 'https://revatgym.com/assets/og-image.png',
+  address: { '@type': 'PostalAddress', streetAddress: street, addressLocality: 'Львів', postalCode, addressCountry: 'UA' },
+  geo: { '@type': 'GeoCoordinates', ...geo },
+  openingHoursSpecification: hours,
+  sameAs: [profileUrl, 'https://www.instagram.com/revat_gym'],
+});
+const everyDay = (opens: string, closes: string) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens, closes });
+const weekdays = (opens: string, closes: string) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens, closes });
+const saturday = (opens: string, closes: string) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens, closes });
+const localBusinessSchema = [
+  gymSchema('REVAT — Кульпарківська 93', 'вул. Кульпарківська 93', '79000', { latitude: 49.8210781, longitude: 23.9931974 }, [everyDay('06:00', '22:00')], 'https://www.google.com/maps/place/?q=place_id:ChIJFQEJd2fnOkcRncGKRjFCurM'),
+  gymSchema('REVAT — Жовківська 22', 'вулиця Жовківська 22', '79019', { latitude: 49.857206, longitude: 24.0377136 }, [weekdays('07:00', '21:30'), saturday('09:00', '15:00')], 'https://www.google.com/maps/place/?q=place_id:ChIJQ4sFAAXdOkcR3W6ClBBBw6A'),
+];
+
+const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Math.round(num));
+---
+
+<BaseLayout>
+<!-- ═════════ ПЕРШИЙ ЕКРАН: шапка + hero, мазок пензля на фоні ═════════ -->
+<div class="first-screen">
+  <div class="brush" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-in">
+      <a href="#top" class="logo" aria-label="REVAT — на початок"><img src="/assets/logo-revat.png" alt="REVAT Lviv"></a>
+      <nav class="nav" id="main-nav" aria-label="Головне меню">
+        <a href="#classes">Тренування</a>
+        <a href="#price">Абонементи</a>
+        <a href="#schedule">Розклад</a>
+        <a href="#coaches">Тренери</a>
+        <a href="#reviews">Відгуки</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+      <div class="header-actions">
+        <a href="https://www.instagram.com/revat_gym" class="icon-btn" aria-label="Instagram REVAT">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+        </a>
+        <a href="#price" class="header-buy">Купити абонемент</a>
+        <button type="button" class="icon-btn burger" aria-label="Меню" aria-expanded="false" aria-controls="main-nav">
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="container hero-in">
+      <p class="hero-kicker">Перший кросфіт зал у Львові</p>
+      <h1 class="display">Ставай кращим<br>разом з нами!</h1>
+      <p class="hero-lead">Групові й персональні тренування з кросфіту, важка атлетика та OpenGym. Для новачків і для атлетів, які готуються до змагань.</p>
+      <div class="hero-ctas">
+        <a href="#price" class="btn btn--red">Купити абонемент онлайн</a>
+        <a href="#contacts" class="btn btn--outline">Перше заняття — безкоштовно</a>
+      </div>
+      <div class="locations">
+        <a href="https://maps.app.goo.gl/2HWWT2xW99jxmXtC7" class="loc">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Кульпарківська 93 <span class="rating">★ [4.9]</span><span class="count">40 відгуків у Google</span>
+        </a>
+        <a href="https://goo.gl/maps/RU6y1cPijDB2" class="loc">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Жовківська 22 <span class="rating">★ [4.9]</span><span class="count">120+ відгуків у Google</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═════════ ЯК КУПИТИ ═════════ -->
+<section class="steps">
+  <div class="container steps-grid">
+    <div>
+      <h2 class="display steps-title">Абонемент<br>за 2 хвилини</h2>
+      <p class="steps-sub">Без черги на рецепції — оплачуй онлайн.</p>
+    </div>
+    <div class="step"><span class="step-num">1</span><div><strong>Обери абонемент</strong><span class="t">Групові, OpenGym, персональні, сауна.</span></div></div>
+    <div class="step"><span class="step-num">2</span><div><strong>Оплати онлайн</strong><span class="t">Безпечна оплата карткою через нашу сторінку в Altegio.</span></div></div>
+    <div class="step"><span class="step-num">3</span><div><strong>Приходь тренуватись</strong><span class="t">Абонемент уже в системі — можна починати тренування одразу.</span></div></div>
+  </div>
+</section>
+
+<!-- ═════════ ТРЕНУВАННЯ ═════════ -->
+<section class="sec" id="classes">
+  <div class="container">
+    <p class="eyebrow">Тренування</p>
+    <h2 class="display h2">Обери свій формат</h2>
+    <div class="cards-3">
+      <article class="class-card">
+        <div class="class-body">
+          <div class="class-head"><h3 class="h3">Групові тренування</h3><span class="tag">60 хв</span></div>
+          <p>Групи 6–20 осіб за стабільним графіком. Вивчиш базові навички кросфіту, а навантаження підберуть саме під тебе — від новачка до профі.</p>
+          <a href="#price" class="link-arrow">Ціни →</a>
+        </div>
+      </article>
+      <article class="class-card">
+        <div class="class-body">
+          <div class="class-head"><h3 class="h3">Персональні тренування</h3><span class="tag">60+ хв</span></div>
+          <p>Програма під твої цілі, рекомендації щодо харчування, сну й режиму. Підготовка до змагань, зокрема Race Nation та Spartan Race.</p>
+          <a href="#price" class="link-arrow">Ціни →</a>
+        </div>
+      </article>
+      <article class="class-card">
+        <div class="class-body">
+          <div class="class-head"><h3 class="h3">Важка атлетика</h3><span class="tag">120 хв</span></div>
+          <p>Щотижневий авторський клас по суботах: техніка вправ зі штангою та робота з важкими вагами під наглядом тренера.</p>
+          <a href="#price" class="link-arrow">Ціни →</a>
+        </div>
+      </article>
+      <article class="class-card">
+        <div class="class-body">
+          <div class="class-head"><h3 class="h3">OpenGym</h3><span class="tag">без тренера</span></div>
+          <p>Самостійні тренування у вільний час. Можна додати програму від сертифікованого тренера CF-L2.</p>
+          <a href="#price" class="link-arrow">Ціни →</a>
+        </div>
+      </article>
+      <article class="class-card">
+        <div class="class-body">
+          <div class="class-head"><h3 class="h3">Online</h3><span class="tag">щомісяця</span></div>
+          <p>Професійна програма для дому, звичайного залу чи кросфіт-боксу — з прогресіями та урахуванням травм.</p>
+          <a href="#price" class="link-arrow">Ціни →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ ЦІНИ ═════════ -->
+<section class="sec sec--light" id="price">
+  <div class="container">
+    <div class="price-head">
+      <p class="eyebrow eyebrow--red">Абонементи</p>
+      <h2 class="display h2">Купуй онлайн</h2>
+      <p class="price-note-top">Ціни в гривнях. Натисни «Купити» — відкриється сторінка оплати в Altegio.</p>
+    </div>
+
+    <div class="price-location-selector">
+      <p class="price-location-label">Твій зал:</p>
+      <div class="location-buttons">
+        {Object.entries(locations).map(([key, location]) => (
+          <button class={`location-btn ${key === 'kulparkivska' ? 'active' : ''}`} data-location={key}>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            {location.name}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="price-tabs-nav">
+      {priceCategories.map((category, idx) => (
+        <button class={`price-tab-btn ${idx === 0 ? 'active' : ''}`} data-tab={category.id}>
+          {category.name}
+        </button>
+      ))}
+    </div>
+
+    {priceCategories.map((category, idx) => (
+      <div class={`price-section ${idx === 0 ? 'active' : ''}`} data-tab={category.id}>
+        <p class="price-desc">{category.description}</p>
+        <div class="price-grid">
+          {category.items.map((item) => (
+            <article class={`price-card ${item.popular ? 'popular' : ''}`} data-locations={Object.entries(item.urls).filter(([, url]) => url).map(([key]) => key).join(' ')}>
+              {item.popular && <span class="popular-badge">НАЙПОПУЛЯРНІШИЙ</span>}
+              <h3 class="price-title">{item.title}</h3>
+              <p class="price-subtitle">{item.subtitle}</p>
+              <div class="price-amount">{typeof item.price === 'number' ? `${item.price} грн` : item.price}</div>
+              <a href={item.urls?.kulparkivska || "https://o2873.alteg.io/loyalty"} class="btn btn--red location-link" data-location="kulparkivska" data-url-k={item.urls?.kulparkivska} data-url-z={item.urls?.zhovkivska}>КУПИТИ</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <div class="offers">
+      <div class="offer">
+        <span class="offer-badge-red">−20%</span>
+        <div>
+          <h3 class="h3">Для ветеранів з УБД</h3>
+          <p>Знижка на абонементи — покажи посвідчення, і ми оформимо абонемент зі знижкою.</p>
+        </div>
+      </div>
+      <div class="offer">
+        <span class="offer-badge-outline">Open<br>Gym ∞</span>
+        <div>
+          <h3 class="h3">«Спорт для незламних»</h3>
+          <p>Військовим за програмою — безлімітний доступ до самостійних тренувань OpenGym.</p>
+        </div>
+      </div>
+    </div>
+    <p class="legal"><a href="https://revatgym.com/oferta">Договір оферти</a> · <a href="https://revatgym.com/polityka-konfidentsijnosti">Політика конфіденційності</a></p>
+  </div>
+</section>
+
+<!-- ═════════ РОЗКЛАД ═════════ -->
+<section class="sec" id="schedule">
+  <div class="container">
+    <p class="eyebrow">Розклад</p>
+    <h2 class="display h2">Графік групових занять</h2>
+    <div class="sched-grid">
+      <div class="sched-card">
+        <h3 class="display">Кульпарківська 93</h3>
+        <div class="sched-row"><div><span class="days">Пн, Ср, Пт</span><span class="kind">Групові</span></div><div class="times"><span class="time">08:00</span><span class="time">17:00</span><span class="time">18:00</span><span class="time">19:00</span></div></div>
+        <div class="sched-row"><div><span class="days">Вт, Чт</span><span class="kind">Групові</span></div><div class="times"><span class="time">18:00</span><span class="time">19:00</span><span class="time">20:00</span></div></div>
+        <div class="sched-row"><div><span class="days">Субота</span><span class="kind">Групові</span></div><div class="times"><span class="time">11:00</span></div></div>
+        <div class="sched-row"><div><span class="days">Субота</span><span class="kind">Важка атлетика</span></div><div class="times"><span class="time">09:00</span></div></div>
+      </div>
+      <div class="sched-card">
+        <h3 class="display">Жовківська 22</h3>
+        <div class="sched-row"><div><span class="days">Пн, Ср, Пт</span><span class="kind">Групові</span></div><div class="times"><span class="time">08:00</span><span class="time">18:00</span><span class="time">19:00</span><span class="time">20:00</span></div></div>
+        <div class="sched-row"><div><span class="days">Вт, Чт</span><span class="kind">Групові</span></div><div class="times"><span class="time">18:00</span><span class="time">19:00</span></div></div>
+        <div class="sched-row"><div><span class="days">Субота</span><span class="kind">Групові</span></div><div class="times"><span class="time">11:00</span></div></div>
+      </div>
+    </div>
+    <p class="hours-note">Кульпарківська 93: щодня 6:00–22:00<br>Жовківська 22: Пн–Пт 7:00–21:30 · Сб 9:00–15:00 · Нд — вихідний</p>
+  </div>
+</section>
+
+<!-- ═════════ ТРЕНЕРИ ═════════ -->
+<section class="sec sec--surface" id="coaches">
+  <div class="container">
+    <p class="eyebrow">Revat family</p>
+    <h2 class="display h2">Наші тренери</h2>
+    <div class="coach-grid">
+      <article class="coach"><img src="/assets/coaches/yulian.webp" width="640" height="640" loading="lazy" decoding="async" alt="Юліян Череватий"><div class="coach-body"><h3 class="h3">Юліян Череватий</h3><span>Тренер 3 категорії · CF-L2</span><p>CrossFit LVL2 trainer, учасник і призер міжнародних та всеукраїнських змаганнь із кросфіту. Досвід з 11-ти років, 12 років тренерської діяльності. Тренер групових та індивідуальних тренувань з CrossFit.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/olya.webp" width="640" height="640" loading="lazy" decoding="async" alt="Ольга Черевата"><div class="coach-body"><h3 class="h3">Ольга Черевата</h3><span>Тренер 2 категорії · МС з важкої атлетики</span><p>Майстер спорту України з важкої атлетики, багаторазова чемпіонка України з важкої атлетики та призерка змаганнь з CrossFit. Досвід 12 років. Тренер групових та індивідуальних тренувань з CrossFit та важкої атлетики.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/alina.webp" width="640" height="640" loading="lazy" decoding="async" alt="Аліна Орлова"><div class="coach-body"><h3 class="h3">Аліна Орлова</h3><span>Тренер 2 категорії</span><p>Магістр ЛДУФК, сертифікована інструкторка Totalfit та CrossFit. Досвід понад 15 років, 5+ років тренерської діяльності. Тренерка групових та індивідуальних тренувань з CrossFit. Працює з атлетами різного рівня, а також з вагітними жінками та період після пологів.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/orest.webp" width="640" height="640" loading="lazy" decoding="async" alt="Орест Волощук"><div class="coach-body"><h3 class="h3">Орест Волощук</h3><span>Тренер 2 категорії</span><p>КМС з важкої атлетики, учасник і призер міжнародних та всеукраїнських змаганнь із кросфіту. Досвід з 4 років, 10 років тренерської діяльності. Тренер групових та індивідуальних тренувань з CrossFit.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/dasha.webp" width="640" height="640" loading="lazy" decoding="async" alt="Дарія Колеснікова"><div class="coach-body"><h3 class="h3">Дарія Колеснікова</h3><span>Тренер 2 категорії</span><p>Майстер спорту з важкої атлетики, член збірної команди України, професійна кросфіт-атлетка та призерка міжнародних турнірів з CrossFit. Досвід 15 років, 4 роки тренерської діяльності. Тренер групових та індивідуальних тренувань з CrossFit та важкої атлетики.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/irina.webp" width="640" height="640" loading="lazy" decoding="async" alt="Іра Подрез"><div class="coach-body"><h3 class="h3">Іра Подрез</h3><span>Тренер 2 категорії</span><p>Багаторазова призерка та переможниця змаганнь з CrossFit. З дитинства у спорті, в CrossFit понад 10 років. Тренерка групових та індивідуальних тренувань з CrossFit.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ ВІДГУКИ (заглушки → API) ═════════ -->
+<section class="sec sec--light reviews" id="reviews">
+  <div class="container">
+    <p class="eyebrow eyebrow--red">Відгуки</p>
+    <h2 class="display h2">Що кажуть атлети</h2>
+    <div class="ratings">
+      <a class="rating-tile" href={reviewsData.locations.kulparkivska.google.url} target="_blank" rel="noopener">
+        <span class="src"><span class="src-badge src-badge--google">Google</span>Кульпарківська 93</span>
+        <span class="score"><b>[{reviewsData.locations.kulparkivska.google.rating || '—'}]</b><span class="stars">{starRating(reviewsData.locations.kulparkivska.google.rating || 0)}</span></span>
+        <span class="more">{reviewsData.locations.kulparkivska.google.total} відгуків — читати всі</span>
+      </a>
+      <a class="rating-tile" href={reviewsData.locations.zhovkivska.google.url} target="_blank" rel="noopener">
+        <span class="src"><span class="src-badge src-badge--google">Google</span>Жовківська 22</span>
+        <span class="score"><b>[{reviewsData.locations.zhovkivska.google.rating || '—'}]</b><span class="stars">{starRating(reviewsData.locations.zhovkivska.google.rating || 0)}</span></span>
+        <span class="more">{reviewsData.locations.zhovkivska.google.total} відгуків — читати всі</span>
+      </a>
+      <a class="rating-tile js-altegio" href="#altegio">
+        <span class="src"><span class="src-badge src-badge--altegio">Altegio</span>Кульпарківська 93</span>
+        <span class="score"><b>[{reviewsData.locations.kulparkivska.altegio.rating || '—'}]</b><span class="stars">{starRating(reviewsData.locations.kulparkivska.altegio.rating || 0)}</span></span>
+        <span class="more">{reviewsData.locations.kulparkivska.altegio.reviews.length} відгуків — читати всі</span>
+      </a>
+      <a class="rating-tile js-altegio" href="#altegio">
+        <span class="src"><span class="src-badge src-badge--altegio">Altegio</span>Жовківська 22</span>
+        <span class="score"><b>[{reviewsData.locations.zhovkivska.altegio.rating || '—'}]</b><span class="stars">{starRating(reviewsData.locations.zhovkivska.altegio.rating || 0)}</span></span>
+        <span class="more">{reviewsData.locations.zhovkivska.altegio.reviews.length} відгуків — читати всі</span>
+      </a>
+    </div>
+    <div class="review-grid">
+      {(() => {
+        const locs = reviewsData.locations;
+        const hasText = (review) => (review.text || review.comment || '').trim() !== '';
+
+        // Reviews with text, grouped by location and platform
+        const groups = [
+          ['kulparkivska', 'google'], ['kulparkivska', 'altegio'],
+          ['zhovkivska', 'google'], ['zhovkivska', 'altegio'],
+        ].map(([location, source]) =>
+          locs[location][source].reviews
+            .filter(hasText)
+            .map((r) => ({ ...r, source, location }))
+        );
+
+        // One review from each location and platform first, then the rest
+        const featured = groups.map((list) => list[0]).filter(Boolean);
+        const rest = groups.flatMap((list) => list.slice(1));
+        const allReviews = [...featured, ...rest];
+
+        return allReviews.slice(0, 6).map((review) => {
+          const isGoogle = review.source === 'google';
+          // Google times are Unix seconds (Жовківська) or ISO strings (Кульпарківська); Altegio uses created_at
+          const rawDate = isGoogle ? (typeof review.time === 'number' ? review.time * 1000 : review.time) : review.created_at;
+          const date = new Date(rawDate).toLocaleDateString('uk-UA');
+          const locName = review.location === 'kulparkivska' ? 'Кульпарківська' : 'Жовківська';
+          return (
+            <article class="review">
+              <div class="review-top">
+                <span class="stars">{starRating(review.rating)}</span>
+                <span class={`src-badge src-badge--${isGoogle ? 'google' : 'altegio'}`}>{isGoogle ? 'Google' : 'Altegio'}</span>
+              </div>
+              <p>{review.text || review.comment}</p>
+              <div class="review-foot">
+                <strong>{review.author_name || review.author}</strong>
+                <span>{locName} · {date}</span>
+              </div>
+            </article>
+          );
+        });
+      })()}
+    </div>
+    <p class="reviews-note">Відгуки та рейтинг оновлюються автоматично з Google Maps і Altegio.</p>
+  </div>
+</section>
+
+<!-- ═════════ ПРОБНЕ ТРЕНУВАННЯ + КОНТАКТИ ═════════ -->
+<section class="sec" id="contacts">
+  <div class="container contacts-in">
+    <div class="trial" id="trial">
+      <h2 class="display">Перше тренування — безкоштовно</h2>
+      <p class="trial-lead">Залиш контакти — ми зв'яжемся з тобою і підберем зручний час.</p>
+      <form class="form" id="trial-form" novalidate>
+        <div class="trial-location">
+          <p class="price-location-label">Локація:</p>
+          <div class="location-buttons">
+            {Object.entries(locations).map(([key, location], idx) => (
+              <button type="button" class={`location-btn ${idx === 0 ? 'active' : ''}`} data-trial-location={key} data-altegio-id={location.altegioId}>
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                {location.name}
+              </button>
+            ))}
+          </div>
+          <input type="hidden" name="location" value="kulparkivska">
+        </div>
+        <label class="field">Ім'я та прізвище<input type="text" name="name" autocomplete="name" required></label>
+        <label class="field">Телефон<input type="tel" name="phone" autocomplete="tel" placeholder="+380" required></label>
+        <label class="field">Email<input type="email" name="email" autocomplete="email" placeholder="ім'я@приклад.ua" required></label>
+        <label class="field">Дата візиту<input type="date" name="visit_date" required></label>
+        <button type="submit" class="btn btn--red">Записатись</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="contact-card">
+      <div>
+        <h3 class="h3">Пиши нам</h3>
+        <a href="https://www.instagram.com/revat_gym" class="ig-big">
+          <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+          @revat_gym
+        </a>
+      </div>
+      <div>
+        <h3 class="h3">Адреси</h3>
+        <a class="addr" href="https://maps.app.goo.gl/2HWWT2xW99jxmXtC7">вул. Кульпарківська 93, Львів</a>
+        <a class="addr" href="https://goo.gl/maps/RU6y1cPijDB2">вул. Жовківська 22, Львів</a>
+      </div>
+      <div>
+        <h3 class="h3">Ми відчинені</h3>
+        <p>Кульпарківська 93: щодня 6:00–22:00<br>Жовківська 22: Пн–Пт 7:00–21:30<br>Сб 9:00–15:00<br>Нд — вихідний</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span>© REVAT, Львів</span>
+  <a href="https://www.instagram.com/revat_gym" class="icon-btn" aria-label="Instagram REVAT">
+    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+  </a>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let currentLocation = 'kulparkivska';
+
+    // Location switching
+    const locationBtns = document.querySelectorAll('.price-location-selector .location-btn');
+    locationBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const location = btn.getAttribute('data-location');
+        currentLocation = location;
+
+        // Update active location button
+        locationBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        showLocationItems(location);
+
+        // Update all buy button URLs
+        const buyLinks = document.querySelectorAll('.location-link');
+        buyLinks.forEach(link => {
+          const url = location === 'kulparkivska'
+            ? link.getAttribute('data-url-k')
+            : link.getAttribute('data-url-z');
+
+          if (url) {
+            link.href = url;
+            link.style.pointerEvents = 'auto';
+            link.style.opacity = '1';
+          } else {
+            link.style.pointerEvents = 'none';
+            link.style.opacity = '0.5';
+          }
+        });
+      });
+    });
+
+    // Trial form: visit date can be from today up to 7 days ahead
+    const visitDate = document.querySelector('input[name="visit_date"]');
+    if (visitDate) {
+      const toLocalDate = (date) => new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+      const today = new Date();
+      const inWeek = new Date(today);
+      inWeek.setDate(today.getDate() + 7);
+      visitDate.min = toLocalDate(today);
+      visitDate.max = toLocalDate(inWeek);
+    }
+
+    // Mobile menu: toggle the nav and keep aria-expanded in sync
+    const burger = document.querySelector('.burger');
+    const mainNav = document.getElementById('main-nav');
+    burger?.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    // Close the menu when a link is chosen
+    mainNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        burger?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Trial form location: buttons write their value into the hidden field
+    const trialLocationBtns = document.querySelectorAll('[data-trial-location]');
+    const trialLocationInput = document.querySelector('.trial-location input[name="location"]');
+    trialLocationBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        trialLocationBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (trialLocationInput) trialLocationInput.value = btn.getAttribute('data-trial-location');
+      });
+    });
+
+    // Trial form: validate, then POST JSON to the free-visit endpoint
+    const trialForm = document.getElementById('trial-form');
+    if (trialForm) {
+      const FREE_VISIT_URL = import.meta.env.PUBLIC_FREE_VISIT_URL;
+      const submitBtn = trialForm.querySelector('button[type="submit"]');
+      const status = trialForm.querySelector('.form-status');
+      const fields = trialForm.querySelectorAll('input[name]:not([type="radio"]):not([type="hidden"])');
+      const messages = {
+        400: 'Перевірте виділені поля.',
+        403: 'Цей сайт не може надсилати заявки. Зверніться до студії.',
+        409: 'Зверніться до студії, щоб підтвердити запис.',
+        429: 'Забагато спроб. Спробуйте пізніше.',
+        502: 'Сервіс тимчасово недоступний. Спробуйте пізніше.',
+        503: 'Сервіс тимчасово недоступний. Спробуйте пізніше.',
+      };
+
+      const isValid = (input) => {
+        const value = input.value.trim();
+        if (!value) return !input.required;
+        if (input.name === 'phone') return /^\+?\d{9,15}$/.test(value.replace(/[\s()-]/g, ''));
+        return input.checkValidity();
+      };
+      const showStatus = (message, isError) => {
+        status.textContent = message;
+        status.classList.toggle('is-error', isError);
+      };
+      const markInvalid = (names) => {
+        fields.forEach(input => input.classList.toggle('is-invalid', names.includes(input.name)));
+      };
+
+      fields.forEach(input => {
+        input.addEventListener('input', () => input.classList.remove('is-invalid'));
+      });
+
+      trialForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const invalid = [...fields].filter(input => !isValid(input)).map(input => input.name);
+        markInvalid(invalid);
+        if (invalid.length) {
+          trialForm.querySelector('.is-invalid')?.focus();
+          return;
+        }
+
+        const field = (name) => trialForm.querySelector(`input[name="${name}"]`).value.trim();
+        const selectedLocation = trialForm.querySelector('.trial-location .location-btn.active');
+        const body = {
+          name: field('name'),
+          phone: field('phone'),
+          email: field('email'),
+          visit_date: field('visit_date'),
+          website: '',
+          location_id: Number(selectedLocation.dataset.altegioId),
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.classList.add('is-loading');
+        trialForm.classList.add('is-loading');
+        showStatus('', false);
+        try {
+          if (!FREE_VISIT_URL) throw new Error('FREE_VISIT_URL is not set');
+          const res = await fetch(FREE_VISIT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+          });
+
+          if (res.status === 201) {
+            trialForm.reset();
+            markInvalid([]);
+            showStatus('Дякуємо! Чекаємо вас на тренуванні!', false);
+          } else if (res.status === 400) {
+            // Mark the fields the server reports; if it doesn't say which, mark all of them
+            const data = await res.json().catch(() => ({}));
+            const reported = Array.isArray(data.fields) ? data.fields : Object.keys(data.fields ?? data.errors ?? {});
+            markInvalid(reported.length ? reported : [...fields].map(input => input.name));
+            showStatus(messages[400], true);
+          } else {
+            showStatus(messages[res.status] ?? 'Щось пішло не так. Спробуйте пізніше.', true);
+          }
+        } catch {
+          showStatus('Немає зв’язку з сервером. Спробуйте пізніше.', true);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('is-loading');
+          trialForm.classList.remove('is-loading');
+        }
+      });
+    }
+
+    // Price tabs functionality
+    const tabButtons = document.querySelectorAll('.price-tab-btn');
+    const sections = document.querySelectorAll('.price-section');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabId = button.getAttribute('data-tab');
+
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        button.classList.add('active');
+        document.querySelector(`.price-section[data-tab="${tabId}"]`)?.classList.add('active');
+      });
+    });
+
+    // Show only subscriptions sold at the selected location; hide tabs left empty
+    const showLocationItems = (location) => {
+      document.querySelectorAll('.price-card').forEach(card => {
+        card.hidden = !card.dataset.locations.split(' ').includes(location);
+      });
+      let activeHidden = false;
+      tabButtons.forEach(btn => {
+        const section = document.querySelector(`.price-section[data-tab="${btn.dataset.tab}"]`);
+        const hasItems = [...section.querySelectorAll('.price-card')].some(card => !card.hidden);
+        btn.hidden = !hasItems;
+        if (!hasItems && btn.classList.contains('active')) activeHidden = true;
+      });
+      if (activeHidden) {
+        tabButtons.forEach(btn => { if (!btn.hidden && !btn.classList.contains('active')) btn.click(); });
+      }
+    };
+    showLocationItems(currentLocation);
+
+    // Initialize buy links based on current location
+    const buyLinks = document.querySelectorAll('.location-link');
+    buyLinks.forEach(link => {
+      const url = currentLocation === 'kulparkivska'
+        ? link.getAttribute('data-url-k')
+        : link.getAttribute('data-url-z');
+
+      if (url) {
+        link.href = url;
+        link.style.pointerEvents = 'auto';
+        link.style.opacity = '1';
+      } else {
+        link.style.pointerEvents = 'none';
+        link.style.opacity = '0.5';
+      }
+    });
+  });
+</script>
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+</BaseLayout>

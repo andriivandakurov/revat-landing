@@ -1,0 +1,1930 @@
+{
+  "fetchedAt": "2026-11-17T12:30:12.108Z",
+  "chainId": "1156945",
+  "onlineByLocation": {
+    "kulparkivska": [
+      473183,
+      473184,
+      473187,
+      473193,
+      473194,
+      473195,
+      473196,
+      473197,
+      473232,
+      473233,
+      473234,
+      473235,
+      517395,
+      517396,
+      517399,
+      517400,
+      524391
+    ],
+    "zhovkivska": [
+      473183,
+      473184,
+      473187,
+      473193,
+      473194,
+      473195,
+      473196,
+      473197,
+      473232,
+      473233,
+      473234,
+      473235,
+      517395,
+      517396
+    ]
+  },
+  "items": [
+    {
+      "id": 440517,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Персональний - 50 занять (з тренером 1 категорії)",
+      "period": 12,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 50,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 20245,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": false,
+      "is_online_sale_enabled": false,
+      "online_sale_title": "Персональний - 50 занять (з тренером 1 категорії)",
+      "online_sale_description": "<p><br></p>",
+      "online_sale_price": 0,
+      "autoactivation_time": 0,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 18,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187525,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Персональне тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 0
+    },
+    {
+      "id": 441581,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Груповий - 12 занять активація після першого заняття",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 12,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 1999,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": false,
+      "online_sale_title": "Груповий - 12 занять (2)",
+      "online_sale_description": "<p><br></p>",
+      "online_sale_price": 0,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 22,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187524,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Групове тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 399,
+              "chain_price_max": 399,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 4
+    },
+    {
+      "id": 470595,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Пакет \"Comfort\"",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 10,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": false,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 0,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 1599,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": false,
+      "is_online_sale_enabled": false,
+      "online_sale_title": "Пакет \"Comfort\"",
+      "online_sale_description": "",
+      "online_sale_price": 0,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 34,
+      "balance_container": {
+        "links": [
+          {
+            "count": 31,
+            "is_unlimited": false,
+            "category": {
+              "id": 12318789,
+              "category_id": 1,
+              "is_category": true,
+              "title": "Додаткові",
+              "online_sale_title": "Додаткові",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 1,
+                "category_id": 0,
+                "is_category": false,
+                "title": "%root",
+                "online_sale_title": "",
+                "category": []
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 1
+    },
+    {
+      "id": 470596,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Пакет \"Base\"",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 10,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": false,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 0,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 239,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": false,
+      "is_online_sale_enabled": false,
+      "online_sale_title": "Пакет \"Base\"",
+      "online_sale_description": "",
+      "online_sale_price": 0,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 35,
+      "balance_container": {
+        "links": [
+          {
+            "count": 31,
+            "is_unlimited": false,
+            "category": {
+              "id": 12318789,
+              "category_id": 1,
+              "is_category": true,
+              "title": "Додаткові",
+              "online_sale_title": "Додаткові",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 1,
+                "category_id": 0,
+                "is_category": false,
+                "title": "%root",
+                "online_sale_title": "",
+                "category": []
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 0
+    },
+    {
+      "id": 473183,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Open Gym - денний (6:00 - 17:00)",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 25,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 999,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Open Gym - денний (6:00 - 17:00)",
+      "online_sale_description": "Самостійне тренування без тренера",
+      "online_sale_price": 999,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 36,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187523,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Open Gym",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 552
+    },
+    {
+      "id": 473184,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Open Gym - безлім",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 100,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 1399,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": false,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Open Gym - безлім",
+      "online_sale_description": "Самостійне тренування без тренера",
+      "online_sale_price": 1399,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 37,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187523,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Open Gym",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 106
+    },
+    {
+      "id": 473187,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Open Gym - безлім + програма тренувань",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 100,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 1999,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": false,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Open Gym - безлім + програма тренувань",
+      "online_sale_description": "Самостійне тренування без тренера",
+      "online_sale_price": 1999,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 38,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187523,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Open Gym",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 144
+    },
+    {
+      "id": 473193,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Груповий - 8 занять",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 5,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 8,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 2099,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Груповий - 8 занять",
+      "online_sale_description": "Групове тренування з тренером. Даєш п`ять на вході - отримуєш масу позитиву на виході! Тренування відбуваються у групах 6-12 осіб за стабільним графіком. Така кількість учасників дозволяє приділити увагу кожному. Кожен знаходиться під пильним наглядом тренера. Тут ви вивчите всі базові навички які необхідні в кросфіті, а підбір навантаження під кожного, створює можливість для заняття від новачка до атлета - профі.",
+      "online_sale_price": 2099,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 39,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187524,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Групове тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 399,
+              "chain_price_max": 399,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 962
+    },
+    {
+      "id": 473194,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Груповий - 12 занять",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 5,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 12,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 2399,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Груповий - 12 занять",
+      "online_sale_description": "Групове заняття з тренером",
+      "online_sale_price": 2399,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 40,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187524,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Групове тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 399,
+              "chain_price_max": 399,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 841
+    },
+    {
+      "id": 473195,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Груповий - безлім",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 5,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 25,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 2649,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Груповий - безлім",
+      "online_sale_description": "Групові тренування з тренером",
+      "online_sale_price": 2649,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 41,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187524,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Групове тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 399,
+              "chain_price_max": 399,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 186
+    },
+    {
+      "id": 473196,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Груповий - 36 занять",
+      "period": 3,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 10,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 36,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 6199,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Груповий - 36 занять",
+      "online_sale_description": "Групові заняття з тренером",
+      "online_sale_price": 6199,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 42,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187524,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Групове тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 399,
+              "chain_price_max": 399,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 60
+    },
+    {
+      "id": 473197,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Груповий - 72 заняття",
+      "period": 6,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 20,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 72,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 11999,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Груповий - 72 заняття",
+      "online_sale_description": "Групове тренування з тренером",
+      "online_sale_price": 11999,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 43,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187524,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Групове тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 399,
+              "chain_price_max": 399,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 9
+    },
+    {
+      "id": 473230,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Персональний - 10 занять (з тренером 1 категорії)",
+      "period": 2,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 10,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 4499,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": false,
+      "is_online_sale_enabled": false,
+      "online_sale_title": "Персональний - 10 занять (з тренером 1 категорії) (2)",
+      "online_sale_description": "<p><br></p>",
+      "online_sale_price": 0,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 44,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213958,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Разове індивідуальне заняття 1 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 549,
+              "chain_price_max": 549,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 0
+    },
+    {
+      "id": 473232,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Персональний - 10 занять (з тренером 2 категорії)",
+      "period": 2,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 10,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 10,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 5499,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Персональний - 10 занять (з тренером 2 категорії)",
+      "online_sale_description": "Персональне тренування з тренером 2 категорії",
+      "online_sale_price": 5499,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 46,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187525,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Персональне тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          },
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213957,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Персональне тренування 2 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          },
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213959,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Разове індивідуальне заняття 2 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 649,
+              "chain_price_max": 649,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 220
+    },
+    {
+      "id": 473233,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Персональний - 50 занять (з тренером 2 категорії)",
+      "period": 12,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 50,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 24745,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Персональний - 50 занять (з тренером 2 категорії)",
+      "online_sale_description": "Персональне заняття з тренером 2 категорії",
+      "online_sale_price": 24745,
+      "autoactivation_time": 0,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 47,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187525,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Персональне тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          },
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213957,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Персональне тренування 2 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          },
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213959,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Разове індивідуальне заняття 2 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 649,
+              "chain_price_max": 649,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 4
+    },
+    {
+      "id": 473234,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Персональний - 10 занять (з тренером 3 категорії)",
+      "period": 2,
+      "period_unit_id": 3,
+      "allow_freeze": true,
+      "freeze_limit": 10,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 10,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 6499,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Персональний - 10 занять (з тренером 3 категорії)",
+      "online_sale_description": "Персональне тренування з тренером 3 категорії",
+      "online_sale_price": 6499,
+      "autoactivation_time": 10,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 48,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187525,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Персональне тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          },
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213950,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Інидувідуальне тренування 3 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          },
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213960,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Разове індивідуальне заняття 3 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 749,
+              "chain_price_max": 749,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 131
+    },
+    {
+      "id": 473235,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Персональний - 50 занять (з тренером 3 категорії)",
+      "period": 12,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 50,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 29245,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 1,
+      "expiration_type_title": "During the first visit",
+      "service_price_correction": true,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Персональний - 50 занять (з тренером 3 категорії)",
+      "online_sale_description": "Персональне тренування з тренером 3 категорії",
+      "online_sale_price": 29245,
+      "autoactivation_time": 0,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 49,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213960,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Разове індивідуальне заняття 3 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 749,
+              "chain_price_max": 749,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 4
+    },
+    {
+      "id": 473816,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Оренда шафки",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": false,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 0,
+      "is_code_required": false,
+      "balance_edit_type_id": 0,
+      "cost": 150,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 2,
+      "expiration_type_title": "Upon sale",
+      "service_price_correction": false,
+      "is_online_sale_enabled": false,
+      "online_sale_title": "Оренда шафки",
+      "online_sale_description": "",
+      "online_sale_price": 0,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 50,
+      "balance_container": {
+        "links": [
+          {
+            "count": 31,
+            "is_unlimited": false,
+            "service": {
+              "id": 12906936,
+              "category_id": 12318789,
+              "is_category": false,
+              "title": "Оренда шафки",
+              "online_sale_title": "Оренда шафки",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12318789,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Додаткові",
+                "online_sale_title": "Додаткові",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 29
+    },
+    {
+      "id": 480451,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Онлайн програма тренувань",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": false,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 0,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 1699,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 2,
+      "expiration_type_title": "Upon sale",
+      "service_price_correction": false,
+      "is_online_sale_enabled": false,
+      "online_sale_title": "Онлайн програма тренувань",
+      "online_sale_description": "",
+      "online_sale_price": 0,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 51,
+      "balance_container": {
+        "links": [
+          {
+            "count": 1,
+            "is_unlimited": false,
+            "category": {
+              "id": 12187517,
+              "category_id": 1,
+              "is_category": true,
+              "title": "Тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 1,
+                "category_id": 0,
+                "is_category": false,
+                "title": "%root",
+                "online_sale_title": "",
+                "category": []
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 2
+    },
+    {
+      "id": 500576,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Ветеранський спорт",
+      "period": 3,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": false,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 0,
+      "is_code_required": false,
+      "balance_edit_type_id": 0,
+      "cost": 1500,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 2,
+      "expiration_type_title": "Upon sale",
+      "service_price_correction": false,
+      "is_online_sale_enabled": false,
+      "online_sale_title": "Ветеранський спорт",
+      "online_sale_description": "Міністерство у справах ветеранів України спільно з Міністерством цифрової трансформації України розпочали другий етап прийому заявок на участь у програмі Ветеранський спорт. Ця ініціатива надає можливість ветеранам та учасникам бойових дій з інвалідністю отримувати щоквартальну фінансову допомогу в розмірі 1 500 грн для відвідування спортивних залів, басейнів та інших закладів фізичної культури.",
+      "online_sale_price": 1500,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 53,
+      "balance_container": {
+        "links": [
+          {
+            "count": 1,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187523,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Open Gym",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 0,
+              "chain_price_max": 0,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 97
+    },
+    {
+      "id": 517395,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Разове тренування",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 1,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 399,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 2,
+      "expiration_type_title": "Upon sale",
+      "service_price_correction": false,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Разове тренування",
+      "online_sale_description": "Даєш п`ять на вході - отримуєш масу позитиву на виході! Тренування відбуваються у групах 6-12 осіб за стабільним графіком. Така кількість учасників дозволяє приділити увагу кожному. Кожен знаходиться під пильним наглядом тренера. Тут ви вивчите всі базові навички які необхідні в кросфіті, а підбір навантаження під кожного, створює можливість для заняття від новачка до атлета - профі.",
+      "online_sale_price": 399,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 54,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12187524,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Групове тренування",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 399,
+              "chain_price_max": 399,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 111
+    },
+    {
+      "id": 517396,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Важка атлетика",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 1,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 399,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 2,
+      "expiration_type_title": "Upon sale",
+      "service_price_correction": false,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Важка атлетика разове тренування",
+      "online_sale_description": "Щотижневий авторський клас, який у нас проходить по суботах. Даний напрямок для тих, хто хоче напрацювати техніку та поглиблено вивчити вправи, які використовуються у наших тренуваннях. Приємним бонусом буде розкриття особистого потенціалу і підняття важких ваг, як круті атлети на відосиках. Тільки ви навчитесь це робити максимально правильно й оптимально. Вправи зі штангою не будуть здаватись такими складними під чітким керівництвом нашого тренера.",
+      "online_sale_price": 399,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 55,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12201051,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Важка атлетика",
+              "online_sale_title": "Важка атлетика",
+              "is_chain": true,
+              "chain_price_min": 399,
+              "chain_price_max": 399,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 28
+    },
+    {
+      "id": 517399,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Разове персональне тренування (з тренером 2 категорії)",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 1,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 649,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 2,
+      "expiration_type_title": "Upon sale",
+      "service_price_correction": false,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Разове персональне тренування ( з тренером 2 категорії)",
+      "online_sale_description": "Разове персональне тренування з тренером 2 категорії",
+      "online_sale_price": 649,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 56,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213959,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Разове індивідуальне заняття 2 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 649,
+              "chain_price_max": 649,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 88
+    },
+    {
+      "id": 517400,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Разове персональне тренування (з тренером 3 категорії)",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 1,
+      "is_code_required": false,
+      "balance_edit_type_id": 2,
+      "cost": 749,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 2,
+      "expiration_type_title": "Upon sale",
+      "service_price_correction": false,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Разове персональне тренування (з тренером 3 категорії)",
+      "online_sale_description": "Разове персональне тренування з тренером 3 категорії",
+      "online_sale_price": 749,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 57,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12213960,
+              "category_id": 12187517,
+              "is_category": false,
+              "title": "Разове індивідуальне заняття 3 категорія",
+              "online_sale_title": "",
+              "is_chain": true,
+              "chain_price_min": 749,
+              "chain_price_max": 749,
+              "category": {
+                "id": 12187517,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Тренування",
+                "online_sale_title": "",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 6
+    },
+    {
+      "id": 524391,
+      "salon_group_id": 1156945,
+      "category_id": null,
+      "title": "Сауна",
+      "period": 1,
+      "period_unit_id": 3,
+      "allow_freeze": false,
+      "freeze_limit": 0,
+      "freeze_limit_unit_id": 1,
+      "is_booking_when_frozen_allowed": false,
+      "is_allow_empty_code": true,
+      "is_united_balance": true,
+      "is_united_balance_unlimited": false,
+      "united_balance_services_count": 1,
+      "is_code_required": false,
+      "balance_edit_type_id": 1,
+      "cost": 300,
+      "is_archived": false,
+      "date_archived": null,
+      "expiration_type_id": 2,
+      "expiration_type_title": "Upon sale",
+      "service_price_correction": false,
+      "is_online_sale_enabled": true,
+      "online_sale_title": "Сауна",
+      "online_sale_description": "Сауна – ідеальний варіант для швидкого відновлення тіла. Релаксація в нашій сауні допомагає зняти напругу м'язів, поліпшити кровообіг та прискорити метаболізм.",
+      "online_sale_price": 300,
+      "autoactivation_time": 1,
+      "autoactivation_time_unit_id": 1,
+      "category": "standard",
+      "weight": 59,
+      "balance_container": {
+        "links": [
+          {
+            "count": 0,
+            "is_unlimited": false,
+            "service": {
+              "id": 12318790,
+              "category_id": 12318789,
+              "is_category": false,
+              "title": "Сауна",
+              "online_sale_title": "Сауна",
+              "is_chain": true,
+              "chain_price_min": 200,
+              "chain_price_max": 200,
+              "category": {
+                "id": 12318789,
+                "category_id": 1,
+                "is_category": true,
+                "title": "Додаткові",
+                "online_sale_title": "Додаткові",
+                "is_chain": true,
+                "chain_price_min": 0,
+                "chain_price_max": 0,
+                "category": {
+                  "id": 1,
+                  "category_id": 0,
+                  "is_category": false,
+                  "title": "%root",
+                  "online_sale_title": "",
+                  "category": []
+                }
+              }
+            }
+          }
+        ]
+      },
+      "abonements_count": 33
+    }
+  ]
+}

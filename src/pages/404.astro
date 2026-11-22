@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Сторінку не знайдено — REVAT";
+const description = "Такої сторінки немає. Поверніться на головну, щоб переглянути абонементи та розклад REVAT.";
+---
+
+<BaseLayout title={title} description={description} noindex={true}>
+  <section class="sec not-found">
+    <div class="container">
+      <p class="eyebrow eyebrow--red">Помилка 404</p>
+      <h1 class="display h2">Сторінку не знайдено</h1>
+      <p class="not-found-lead">Можливо, посилання застаріло або в ньому є помилка. Оберіть, що вас цікавить:</p>
+      <div class="not-found-actions">
+        <a href="/" class="btn btn--red">На головну</a>
+        <a href="/#price" class="btn btn--outline">Абонементи</a>
+        <a href="/#schedule" class="btn btn--outline">Розклад</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

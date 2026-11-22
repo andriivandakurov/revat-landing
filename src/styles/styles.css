@@ -1,0 +1,313 @@
+/* REVAT — стилі сайту. Значення 1:1 з дизайну на канвасі. */
+
+:root {
+  --black: #0B0C0E;
+  --surface: #15171b;
+  --surface-2: #1f2126;
+  --line: #23252a;
+  --line-2: #2a2c31;
+  --red: #D10500;
+  --red-dark: #9a0400;
+  --cream: #F7F5EF;
+  --white: #ffffff;
+  --muted: #c9c6be;
+  --muted-2: #b8b5ad;
+  --muted-on-light: #4a4a4a;
+  --star: #F5B400;
+  --star-on-light: #B07C00;
+  --google: #1a73e8;
+  --altegio: #ffcb00;
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --line-light: #d8d4cb;
+
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Nunito Sans', system-ui, sans-serif;
+  --container: 1240px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+a { color: var(--cream); }
+a:hover { color: var(--white); }
+img { max-width: 100%; }
+
+.container { max-width: var(--container); margin: 0 auto; }
+
+/* Типографіка */
+.display { font-family: var(--font-display); font-weight: 900; font-style: italic; text-transform: uppercase; line-height: 1; margin: 0; }
+.eyebrow { margin: 0 0 8px; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted-2); }
+.eyebrow--red { color: var(--red-dark); }
+.h2 { font-size: 64px; margin-bottom: 48px; }
+.h3 { margin: 0; font-family: var(--font-display); font-weight: 800; font-style: italic; text-transform: uppercase; }
+
+/* Кнопки */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 56px; padding: 0 32px; text-decoration: none;
+  font-family: var(--font-display); font-weight: 800; font-style: italic;
+  font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase;
+  border: 0; cursor: pointer; text-align: center;
+  border-radius: var(--radius);
+}
+.btn--red { background: var(--red); color: var(--cream); }
+.btn--outline { border: 2px solid var(--cream); color: var(--cream); padding: 0 30px; }
+.btn--red:hover, .btn--outline:hover { color: var(--white); }
+
+/* Секції */
+.sec { padding: 104px 24px; }
+.sec--light { background: var(--cream); color: var(--black); }
+.sec--surface { background: var(--surface); }
+
+/* ───────── Перший екран ───────── */
+.first-screen { position: relative; overflow: hidden; }
+.brush {
+  position: absolute; top: 0; bottom: 0; right: -4%; width: 42%;
+  background: url(assets/brush.png) center / 100% 100% no-repeat;
+  pointer-events: none; z-index: 0;
+}
+.first-screen > section { position: relative; z-index: 1; }
+
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--black); border-bottom: 1px solid var(--line); }
+.header-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 24px; }
+.logo img { height: 46px; width: auto; display: block; }
+.nav { display: flex; flex-wrap: wrap; gap: 6px 26px; font-family: var(--font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+.nav a { text-decoration: none; padding: 10px 0; }
+.header-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: var(--black); color: var(--cream); border: 0; padding: 0; cursor: pointer; }
+.header-buy {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px;
+  background: var(--cream); color: var(--black); text-decoration: none;
+  font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px;
+  letter-spacing: 0.05em; text-transform: uppercase; transform: skewX(-8deg);
+}
+.header-buy:hover { color: var(--black); }
+.burger { display: none; }
+
+.hero { padding: 0 24px; }
+.hero-in { min-height: 700px; display: flex; flex-direction: column; justify-content: center; padding: 96px 0 120px; margin-top: 80px; }
+.hero-kicker { margin: 0 0 22px; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase; }
+.hero h1 { font-size: 104px; line-height: 0.92; letter-spacing: -0.01em; }
+.hero-lead { margin: 28px 0 0; max-width: 560px; font-size: 19px; color: #E4E1D9; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.locations { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+.loc {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 22px;
+  background: var(--surface); border-left: 6px solid var(--red); color: var(--cream); text-decoration: none;
+  border-radius: var(--radius);
+  font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 18px; text-transform: uppercase;
+}
+.loc .rating { margin-left: 6px; font-family: var(--font-body); font-style: normal; text-transform: none; font-weight: 700; font-size: 15px; color: var(--star); }
+.loc .count { font-family: var(--font-body); font-style: normal; text-transform: none; font-weight: 600; font-size: 14px; color: var(--muted); }
+
+/* ───────── Як купити ───────── */
+.steps { background: var(--cream); color: var(--black); padding: 56px 24px; }
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; align-items: stretch; }
+.steps-title { font-size: 30px; }
+.steps-sub { margin: 10px 0 0; font-size: 15px; color: var(--muted-on-light); }
+.step { border-radius: var(--radius-lg); display: flex; gap: 14px; background: var(--white); padding: 20px; border: 1px solid var(--line-light); }
+.step-num { font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 44px; line-height: 1; color: var(--red); }
+.step strong { display: block; font-size: 17px; }
+.step span.t { font-size: 15px; color: var(--muted-on-light); }
+
+/* ───────── Тренування ───────── */
+.cards-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.class-card { border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); display: flex; flex-direction: column; }
+.photo-ph { background: var(--surface-2); display: flex; align-items: center; justify-content: center; color: #8a877f; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 4px solid var(--red); }
+.class-card .photo-ph { height: 180px; }
+.class-body { padding: 24px 24px 28px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
+.class-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.class-head .h3 { font-size: 22px; line-height: 1.1; }
+.tag { border-radius: var(--radius-sm); flex-shrink: 0; font-size: 14px; font-weight: 700; color: var(--cream); background: var(--line-2); padding: 3px 10px; }
+.class-body p { margin: 0; font-size: 15px; color: var(--muted); flex-grow: 1; }
+.link-arrow { font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cream); text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 3px; text-underline-offset: 6px; padding: 8px 0; }
+
+/* ───────── Ціни ───────── */
+.price-head { margin-bottom: 36px; }
+.price-head .h2 { margin-bottom: 0; }
+.price-note-top { margin: 12px 0 0; max-width: 520px; font-size: 15px; color: var(--muted-on-light); }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.tab { border-radius: var(--radius); min-height: 44px; padding: 0 20px; border: 1px solid var(--line-light); background: var(--white); color: var(--black); font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; }
+.tab[aria-selected="true"] { background: var(--black); color: var(--cream); }
+.tab-note { margin: 0 0 20px; max-width: 640px; font-size: 16px; font-weight: 600; }
+.price-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.price-card { border-radius: var(--radius-lg); position: relative; background: var(--white); color: var(--black); padding: 28px 24px 24px; display: flex; flex-direction: column; gap: 6px; border: 1px solid var(--line-light); }
+.price-card--hit { background: var(--black); color: var(--cream); }
+.price-card .badge { border-radius: var(--radius-sm); position: absolute; top: -14px; left: 20px; background: var(--red); color: var(--cream); border: 2px solid var(--cream); padding: 4px 12px; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.price-card .h3 { font-size: 22px; line-height: 1.15; }
+.price-card .sub { font-size: 14px; opacity: 0.85; min-height: 22px; }
+.price-row { display: flex; align-items: baseline; gap: 6px; margin: 14px 0 18px; }
+.price-row .from { font-size: 14px; font-weight: 700; opacity: 0.85; }
+.price-row .num { font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 42px; line-height: 1; }
+.price-row .cur { font-weight: 700; }
+.price-card .buy { border-radius: var(--radius); margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 48px; background: var(--red); color: var(--cream); text-decoration: none; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+/* Price location selector */
+.price-location-selector { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding-bottom: 24px; margin-bottom: 32px; border-bottom: 1px solid rgba(11, 12, 14, 0.12); }
+.price-location-label { margin: 0; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); }
+.location-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.location-btn { border-radius: var(--radius); display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid var(--line-light); color: var(--black); padding: 12px 20px; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; }
+.location-btn.active { background: var(--black); color: var(--cream); box-shadow: inset 6px 0 0 var(--red); }
+.location-btn:hover { background: var(--black); color: var(--cream); }
+.location-btn:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+/* Price tabs navigation */
+.price-tabs-nav { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+.price-tab-btn { border-radius: var(--radius); background: var(--white); border: 1px solid var(--line-light); color: var(--black); padding: 12px 20px; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; }
+.price-tab-btn.active { background: var(--black); color: var(--cream); }
+.price-tab-btn:hover { background: var(--black); color: var(--cream); }
+
+/* Price sections */
+.price-section { display: none; }
+.price-section.active { display: block; }
+.price-desc { margin-bottom: 24px; font-size: 15px; color: var(--muted-on-light); }
+
+/* Updated price cards for new layout */
+.price-card { border-radius: var(--radius-lg); position: relative; background: var(--white); color: var(--black); padding: 24px; display: flex; flex-direction: column; gap: 8px; border: 1px solid var(--line-light); }
+.price-card.popular { background: var(--black); color: var(--cream); }
+.popular-badge { border-radius: var(--radius-sm); position: absolute; top: -14px; left: 20px; background: var(--red); color: var(--cream); border: 2px solid var(--cream); padding: 4px 12px; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.price-title { font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 18px; line-height: 1.2; margin: 0; text-transform: uppercase; }
+.price-subtitle { font-size: 14px; opacity: 0.8; margin: 0; }
+.price-amount { font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 36px; line-height: 1; margin: 12px 0 16px; }
+.price-card .btn { margin-top: auto; min-height: 44px; }
+
+.offers { margin-top: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.offer { border-radius: var(--radius-lg); background: var(--black); color: var(--cream); padding: 32px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+.offer > div { flex: 1 1 200px; }
+.offer .h3 { margin-bottom: 6px; font-size: 20px; }
+.offer p { margin: 0; font-size: 15px; color: var(--muted); }
+.offer-badge-red { font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 64px; line-height: 1; color: var(--cream); background: var(--red); padding: 6px 14px; }
+.offer-badge-outline { font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 30px; line-height: 1.05; text-transform: uppercase; border: 3px solid var(--cream); padding: 10px 14px; }
+.legal { margin: 20px 0 0; font-size: 14px; color: var(--muted-on-light); }
+.legal a { color: var(--black); }
+
+/* ───────── Розклад ───────── */
+.sched-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+.sched-card { border-radius: var(--radius-lg); background: var(--surface); padding: 32px; }
+.sched-card .display { margin: 0 0 24px; font-size: 28px; border-bottom: 4px solid var(--red); padding-bottom: 12px; }
+.sched-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; padding: 14px 0; border-bottom: 1px solid var(--line-2); }
+.sched-row .days { display: block; font-weight: 700; }
+.sched-row .kind { display: block; font-size: 13px; color: var(--muted-2); text-transform: uppercase; letter-spacing: 0.06em; }
+.times { display: flex; flex-wrap: wrap; gap: 6px; }
+.time { border-radius: var(--radius-sm); font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 15px; background: var(--cream); color: var(--black); padding: 4px 10px; }
+.hours-note { margin: 24px 0 0; color: var(--muted); }
+
+/* ───────── Тренери ───────── */
+.coach-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.coach img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+.coach { border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; background: var(--black); }
+.coach .photo-ph { aspect-ratio: 4 / 5; }
+.coach-body { padding: 16px 16px 20px; display: flex; flex-direction: column; gap: 8px; }
+.coach .h3 { font-size: 20px; line-height: 1.1; }
+.coach span { font-size: 14px; color: var(--muted); }
+
+/* ───────── Відгуки ───────── */
+.reviews .h2 { margin-bottom: 36px; }
+.ratings { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
+.rating-tile { border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: 4px; padding: 24px; background: var(--black); color: var(--cream); text-decoration: none; }
+.rating-tile .src { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted-2); }
+.src-badge { border-radius: var(--radius-sm); padding: 2px 8px; }
+.src-badge--google { background: var(--google); color: var(--white); }
+.src-badge--altegio { background: var(--altegio); color: var(--black); }
+.rating-tile .score { display: flex; align-items: baseline; gap: 10px; }
+.rating-tile .score b { font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 44px; line-height: 1; }
+.stars { font-size: 20px; letter-spacing: 2px; color: var(--star); }
+.rating-tile .more { font-size: 14px; color: var(--muted); text-decoration: underline; text-underline-offset: 4px; }
+.review-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.review { border-radius: var(--radius-lg); background: var(--white); border: 1px solid var(--line-light); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+.review-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.review-top .stars { font-size: 18px; color: var(--star-on-light); }
+.review-top .src-badge { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; }
+.review p { margin: 0; font-size: 16px; color: #2a2a2a; flex-grow: 1; }
+.review-foot { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; border-top: 1px solid #e3e0d8; padding-top: 12px; }
+.review-foot span { color: var(--muted-on-light); }
+.reviews-note { margin: 20px 0 0; font-size: 14px; color: var(--muted-on-light); }
+
+/* ───────── Пробне + контакти ───────── */
+.contacts-in { display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
+.trial { flex: 1 1 420px; min-width: 0; }
+.trial .display { margin: 0 0 12px; font-size: 58px; line-height: 0.98; }
+.trial-lead { margin: 0 0 28px; font-size: 17px; }
+.form { display: flex; flex-direction: column; gap: 14px; max-width: 480px; }
+.form fieldset { border: 0; padding: 0; margin: 0; display: flex; gap: 10px; flex-wrap: wrap; }
+.form legend { font-weight: 700; margin-bottom: 8px; font-size: 15px; }
+.radio { border-radius: var(--radius); display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; background: var(--surface); cursor: pointer; }
+.field { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 15px; }
+.field input { appearance: none; -webkit-appearance: none; min-height: 48px; padding: 0 14px; border: 0; border-radius: var(--radius); background: var(--cream); color: var(--black); font-size: 16px; font-family: inherit; }
+.field input.is-invalid { border: 2px solid var(--red); }
+.form .btn { margin-top: 6px; }
+.contact-card { border-radius: var(--radius-lg); flex: 1 1 360px; display: flex; flex-direction: column; gap: 28px; background: var(--black); padding: 36px; }
+.contact-card .h3 { margin: 0 0 10px; font-size: 18px; letter-spacing: 0.06em; color: var(--muted-2); }
+.ig-big { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 30px; text-decoration: none; min-height: 44px; }
+.contact-card .addr { display: block; font-size: 18px; padding: 4px 0; }
+.contact-card p { margin: 0; font-size: 18px; }
+
+/* ───────── Футер ───────── */
+.site-footer { border-top: 1px solid var(--line); height: 90px; padding: 0 24px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+.site-footer span { font-size: 14px; }
+
+/* ───────── Адаптив ───────── */
+@media (max-width: 1100px) {
+  .hero h1 { font-size: 80px; }
+  .h2 { font-size: 52px; }
+}
+@media (max-width: 960px) {
+  .hero h1 { font-size: 64px; }
+  .h2 { font-size: 44px; }
+  .trial .display { font-size: 44px; }
+  .nav { display: none; }
+  .nav.open { display: flex; flex-direction: column; width: 100%; order: 3; gap: 0; border-top: 1px solid var(--line); padding-top: 8px; }
+  .nav.open a { padding: 12px 0; font-size: 16px; }
+  .burger { display: inline-flex; }
+}
+@media (max-width: 640px) {
+  .hero h1 { font-size: 36px; }
+  .h2, .trial .display { font-size: 34px; }
+  .hero-lead { font-size: 17px; }
+  .sec { padding: 64px 16px; }
+  .header-in { padding: 12px 16px; gap: 12px; }
+  .logo img { height: 38px; }
+  .header-buy { display: none; }
+  .hero { padding: 0 16px; }
+  .hero-in { min-height: 0; padding: 48px 0 64px; }
+  .hero-ctas .btn { width: 100%; }
+  .loc { flex-wrap: wrap; width: 100%; padding: 10px 16px; font-size: 16px; row-gap: 2px; }
+  .brush { width: 75%; right: -20%; }
+  .coach-grid { grid-template-columns: 1fr; gap: 16px; }
+  .coach .h3 { font-size: 16px; }
+  .steps { padding: 40px 16px; }
+  .ig-big { font-size: 24px; }
+}
+
+[hidden] { display: none !important; }
+
+.form-status { margin: 0; font-size: 15px; color: var(--cream); }
+.form-status:empty { display: none; }
+.form-status.is-error { color: #ff7b72; }
+
+/* Form loading state */
+.form.is-loading .field,
+.form.is-loading .trial-location { opacity: 0.5; pointer-events: none; }
+.btn.is-loading { position: relative; color: transparent; pointer-events: none; }
+.btn.is-loading::after {
+  content: ''; position: absolute; top: 50%; left: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px;
+  border: 3px solid rgba(247, 245, 239, 0.35); border-top-color: var(--cream); border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+
+/* 404 page */
+.not-found { min-height: 70vh; display: flex; align-items: center; }
+.not-found-lead { margin: 20px 0 32px; max-width: 520px; font-size: 18px; color: var(--muted); }
+.not-found-actions { display: flex; flex-wrap: wrap; gap: 14px; }

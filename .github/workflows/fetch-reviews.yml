@@ -1,0 +1,44 @@
+name: Fetch Reviews
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-reviews:
+    runs-on: ubuntu-latest
+    env:
+      ALTEGIO_PARTNER_TOKEN: ${{ secrets.ALTEGIO_PARTNER_TOKEN }}
+      ALTEGIO_USER_TOKEN: ${{ secrets.ALTEGIO_USER_TOKEN }}
+      ALTEGIO_LOCATION_ID_K: ${{ secrets.ALTEGIO_LOCATION_ID_K }}
+      ALTEGIO_LOCATION_ID_Z: ${{ secrets.ALTEGIO_LOCATION_ID_Z }}
+      GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+      GOOGLE_PLACE_ID_K: ${{ secrets.GOOGLE_PLACE_ID_K }}
+      GOOGLE_PLACE_ID_Z: ${{ secrets.GOOGLE_PLACE_ID_Z }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      # Same script as `npm run sync:reviews`; secrets come from the environment instead of .env
+      - name: Sync reviews from Altegio and Google
+        run: node scripts/sync-reviews.mjs
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/reviews.json
+          if git diff --staged --quiet; then
+            echo "No review changes"
+          else
+            git commit -m "chore: update reviews from Altegio and Google"
+            git push
+          fi
