@@ -4,12 +4,17 @@ import '../styles/styles.css';
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const {
   title = "REVAT — кросфіт зал у Львові",
-  description = "Перший кросфіт зал у Львові. Групові та персональні тренування, важка атлетика, OpenGym. Дві локації: Кульпарківська 93 та Жовківська 22."
+  description = "Перший кросфіт зал у Львові. Групові та персональні тренування, важка атлетика, OpenGym. Дві локації: Кульпарківська 93 та Жовківська 22.",
+  noindex = false,
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const image = new URL('/assets/og-image.png', Astro.site);
 ---
 
 <!doctype html>
@@ -19,6 +24,26 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
   <meta name="description" content={description}>
+  <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"}>
+  <meta name="theme-color" content="#0B0C0E">
+  {!noindex && <link rel="canonical" href={canonical}>}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="REVAT">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={image}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={image}>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,17 +51,19 @@ const {
 
   <!-- Google Tag Manager -->
   <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N2MVLX5');
   </script>
-  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/logo-revat.png">
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2MVLX5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <slot />
 
   <script src="/main.js" defer></script>

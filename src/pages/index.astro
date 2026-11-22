@@ -7,6 +7,26 @@ import altegioAbonements from '../data/altegio-abonements.json';
 
 const priceCategories = buildPriceCategories(altegioAbonements);
 
+// Structured data for each gym (schema.org LocalBusiness), matching the visible page
+const gymSchema = (name: string, street: string, postalCode: string, geo: { latitude: number; longitude: number }, hours: object[], profileUrl: string) => ({
+  '@context': 'https://schema.org',
+  '@type': 'SportsActivityLocation',
+  name,
+  url: 'https://revatgym.com/',
+  image: 'https://revatgym.com/assets/og-image.png',
+  address: { '@type': 'PostalAddress', streetAddress: street, addressLocality: 'Львів', postalCode, addressCountry: 'UA' },
+  geo: { '@type': 'GeoCoordinates', ...geo },
+  openingHoursSpecification: hours,
+  sameAs: [profileUrl, 'https://www.instagram.com/revat_gym'],
+});
+const everyDay = (opens: string, closes: string) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens, closes });
+const weekdays = (opens: string, closes: string) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens, closes });
+const saturday = (opens: string, closes: string) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens, closes });
+const localBusinessSchema = [
+  gymSchema('REVAT — Кульпарківська 93', 'вул. Кульпарківська 93', '79000', { latitude: 49.8210781, longitude: 23.9931974 }, [everyDay('06:00', '22:00')], 'https://www.google.com/maps/place/?q=place_id:ChIJFQEJd2fnOkcRncGKRjFCurM'),
+  gymSchema('REVAT — Жовківська 22', 'вулиця Жовківська 22', '79019', { latitude: 49.857206, longitude: 24.0377136 }, [weekdays('07:00', '21:30'), saturday('09:00', '15:00')], 'https://www.google.com/maps/place/?q=place_id:ChIJQ4sFAAXdOkcR3W6ClBBBw6A'),
+];
+
 const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Math.round(num));
 ---
 
@@ -70,7 +90,7 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     </div>
     <div class="step"><span class="step-num">1</span><div><strong>Обери абонемент</strong><span class="t">Групові, OpenGym, персональні, сауна.</span></div></div>
     <div class="step"><span class="step-num">2</span><div><strong>Оплати онлайн</strong><span class="t">Безпечна оплата карткою через нашу сторінку в Altegio.</span></div></div>
-    <div class="step"><span class="step-num">3</span><div><strong>Приходь тренуватись</strong><span class="t">Абонемент уже чекає на тебе на рецепції.</span></div></div>
+    <div class="step"><span class="step-num">3</span><div><strong>Приходь тренуватись</strong><span class="t">Абонемент уже в системі — можна починати тренування одразу.</span></div></div>
   </div>
 </section>
 
@@ -205,7 +225,7 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         <div class="sched-row"><div><span class="days">Субота</span><span class="kind">Групові</span></div><div class="times"><span class="time">11:00</span></div></div>
       </div>
     </div>
-    <p class="hours-note">Кульпарківська 93: щодня 6:00–22:00<br>Жовківська 22: Пн–Пт 7:00–21:00 · Сб 9:00–14:00 · Нд — вихідний</p>
+    <p class="hours-note">Кульпарківська 93: щодня 6:00–22:00<br>Жовківська 22: Пн–Пт 7:00–21:30 · Сб 9:00–15:00 · Нд — вихідний</p>
   </div>
 </section>
 
@@ -215,12 +235,12 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     <p class="eyebrow">Revat family</p>
     <h2 class="display h2">Наші тренери</h2>
     <div class="coach-grid">
-      <article class="coach"><img src="/assets/coaches/yulian.png" alt="Юліян Череватий"><div class="coach-body"><h3 class="h3">Юліян Череватий</h3><span>Тренер 3 категорії · CF-L2</span><p>CrossFit LVL2 trainer, учасник і призер міжнародних та всеукраїнських змаганнь із кросфіту. Досвід з 11-ти років, 12 років тренерської діяльності. Тренер групових та індивідуальних тренувань з CrossFit.</p></div></article>
-      <article class="coach"><img src="/assets/coaches/olya.png" alt="Ольга Черевата"><div class="coach-body"><h3 class="h3">Ольга Черевата</h3><span>Тренер 2 категорії · МС з важкої атлетики</span><p>Майстер спорту України з важкої атлетики, багаторазова чемпіонка України з важкої атлетики та призерка змаганнь з CrossFit. Досвід 12 років. Тренер групових та індивідуальних тренувань з CrossFit та важкої атлетики.</p></div></article>
-      <article class="coach"><img src="/assets/coaches/alina.png" alt="Аліна Орлова"><div class="coach-body"><h3 class="h3">Аліна Орлова</h3><span>Тренер 2 категорії</span><p>Магістр ЛДУФК, сертифікована інструкторка Totalfit та CrossFit. Досвід понад 15 років, 5+ років тренерської діяльності. Тренерка групових та індивідуальних тренувань з CrossFit. Працює з атлетами різного рівня, а також з вагітними жінками та період після пологів.</p></div></article>
-      <article class="coach"><img src="/assets/coaches/orest.png" alt="Орест Волощук"><div class="coach-body"><h3 class="h3">Орест Волощук</h3><span>Тренер 2 категорії</span><p>КМС з важкої атлетики, учасник і призер міжнародних та всеукраїнських змаганнь із кросфіту. Досвід з 4 років, 10 років тренерської діяльності. Тренер групових та індивідуальних тренувань з CrossFit.</p></div></article>
-      <article class="coach"><img src="/assets/coaches/dasha.png" alt="Дарія Колеснікова"><div class="coach-body"><h3 class="h3">Дарія Колеснікова</h3><span>Тренер 2 категорії</span><p>Майстер спорту з важкої атлетики, член збірної команди України, професійна кросфіт-атлетка та призерка міжнародних турнірів з CrossFit. Досвід 15 років, 4 роки тренерської діяльності. Тренер групових та індивідуальних тренувань з CrossFit та важкої атлетики.</p></div></article>
-      <article class="coach"><img src="/assets/coaches/irina.png" alt="Іра Подрез"><div class="coach-body"><h3 class="h3">Іра Подрез</h3><span>Тренер 2 категорії</span><p>Багаторазова призерка та переможниця змаганнь з CrossFit. З дитинства у спорті, в CrossFit понад 10 років. Тренерка групових та індивідуальних тренувань з CrossFit.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/yulian.webp" width="640" height="640" loading="lazy" decoding="async" alt="Юліян Череватий"><div class="coach-body"><h3 class="h3">Юліян Череватий</h3><span>Тренер 3 категорії · CF-L2</span><p>CrossFit LVL2 trainer, учасник і призер міжнародних та всеукраїнських змаганнь із кросфіту. Досвід з 11-ти років, 12 років тренерської діяльності. Тренер групових та індивідуальних тренувань з CrossFit.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/olya.webp" width="640" height="640" loading="lazy" decoding="async" alt="Ольга Черевата"><div class="coach-body"><h3 class="h3">Ольга Черевата</h3><span>Тренер 2 категорії · МС з важкої атлетики</span><p>Майстер спорту України з важкої атлетики, багаторазова чемпіонка України з важкої атлетики та призерка змаганнь з CrossFit. Досвід 12 років. Тренер групових та індивідуальних тренувань з CrossFit та важкої атлетики.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/alina.webp" width="640" height="640" loading="lazy" decoding="async" alt="Аліна Орлова"><div class="coach-body"><h3 class="h3">Аліна Орлова</h3><span>Тренер 2 категорії</span><p>Магістр ЛДУФК, сертифікована інструкторка Totalfit та CrossFit. Досвід понад 15 років, 5+ років тренерської діяльності. Тренерка групових та індивідуальних тренувань з CrossFit. Працює з атлетами різного рівня, а також з вагітними жінками та період після пологів.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/orest.webp" width="640" height="640" loading="lazy" decoding="async" alt="Орест Волощук"><div class="coach-body"><h3 class="h3">Орест Волощук</h3><span>Тренер 2 категорії</span><p>КМС з важкої атлетики, учасник і призер міжнародних та всеукраїнських змаганнь із кросфіту. Досвід з 4 років, 10 років тренерської діяльності. Тренер групових та індивідуальних тренувань з CrossFit.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/dasha.webp" width="640" height="640" loading="lazy" decoding="async" alt="Дарія Колеснікова"><div class="coach-body"><h3 class="h3">Дарія Колеснікова</h3><span>Тренер 2 категорії</span><p>Майстер спорту з важкої атлетики, член збірної команди України, професійна кросфіт-атлетка та призерка міжнародних турнірів з CrossFit. Досвід 15 років, 4 роки тренерської діяльності. Тренер групових та індивідуальних тренувань з CrossFit та важкої атлетики.</p></div></article>
+      <article class="coach"><img src="/assets/coaches/irina.webp" width="640" height="640" loading="lazy" decoding="async" alt="Іра Подрез"><div class="coach-body"><h3 class="h3">Іра Подрез</h3><span>Тренер 2 категорії</span><p>Багаторазова призерка та переможниця змаганнь з CrossFit. З дитинства у спорті, в CrossFit понад 10 років. Тренерка групових та індивідуальних тренувань з CrossFit.</p></div></article>
     </div>
   </div>
 </section>
@@ -231,15 +251,15 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     <p class="eyebrow eyebrow--red">Відгуки</p>
     <h2 class="display h2">Що кажуть атлети</h2>
     <div class="ratings">
-      <a class="rating-tile" href="https://maps.app.goo.gl/2HWWT2xW99jxmXtC7">
+      <a class="rating-tile" href={reviewsData.locations.kulparkivska.google.url} target="_blank" rel="noopener">
         <span class="src"><span class="src-badge src-badge--google">Google</span>Кульпарківська 93</span>
         <span class="score"><b>[{reviewsData.locations.kulparkivska.google.rating || '—'}]</b><span class="stars">{starRating(reviewsData.locations.kulparkivska.google.rating || 0)}</span></span>
-        <span class="more">{reviewsData.locations.kulparkivska.google.reviews.length} відгуків — читати всі</span>
+        <span class="more">{reviewsData.locations.kulparkivska.google.total} відгуків — читати всі</span>
       </a>
-      <a class="rating-tile" href="https://goo.gl/maps/RU6y1cPijDB2">
+      <a class="rating-tile" href={reviewsData.locations.zhovkivska.google.url} target="_blank" rel="noopener">
         <span class="src"><span class="src-badge src-badge--google">Google</span>Жовківська 22</span>
         <span class="score"><b>[{reviewsData.locations.zhovkivska.google.rating || '—'}]</b><span class="stars">{starRating(reviewsData.locations.zhovkivska.google.rating || 0)}</span></span>
-        <span class="more">{reviewsData.locations.zhovkivska.google.reviews.length} відгуків — читати всі</span>
+        <span class="more">{reviewsData.locations.zhovkivska.google.total} відгуків — читати всі</span>
       </a>
       <a class="rating-tile js-altegio" href="#altegio">
         <span class="src"><span class="src-badge src-badge--altegio">Altegio</span>Кульпарківська 93</span>
@@ -340,7 +360,7 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
       </div>
       <div>
         <h3 class="h3">Ми відчинені</h3>
-        <p>Кульпарківська 93: щодня 6:00–22:00<br>Жовківська 22: Пн–Пт 7:00–21:00<br>Сб 9:00–14:00<br>Нд — вихідний</p>
+        <p>Кульпарківська 93: щодня 6:00–22:00<br>Жовківська 22: Пн–Пт 7:00–21:30<br>Сб 9:00–15:00<br>Нд — вихідний</p>
       </div>
     </div>
   </div>
@@ -429,7 +449,7 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     // Trial form: validate, then POST JSON to the free-visit endpoint
     const trialForm = document.getElementById('trial-form');
     if (trialForm) {
-      const FREE_VISIT_URL = 'http://localhost:3000/public/free-visit';
+      const FREE_VISIT_URL = import.meta.env.PUBLIC_FREE_VISIT_URL;
       const submitBtn = trialForm.querySelector('button[type="submit"]');
       const status = trialForm.querySelector('.form-status');
       const fields = trialForm.querySelectorAll('input[name]:not([type="radio"]):not([type="hidden"])');
@@ -486,6 +506,7 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
         trialForm.classList.add('is-loading');
         showStatus('', false);
         try {
+          if (!FREE_VISIT_URL) throw new Error('FREE_VISIT_URL is not set');
           const res = await fetch(FREE_VISIT_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -567,4 +588,6 @@ const starRating = (num) => '★'.repeat(Math.round(num)) + '☆'.repeat(5 - Mat
     });
   });
 </script>
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
 </BaseLayout>

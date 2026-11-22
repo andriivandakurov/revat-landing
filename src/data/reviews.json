@@ -35,7 +35,9 @@
             "time": "2025-06-23T10:07:31.717025660Z"
           }
         ],
-        "rating": 5
+        "rating": 5,
+        "total": 41,
+        "url": "https://www.google.com/maps/place/?q=place_id:ChIJFQEJd2fnOkcRncGKRjFCurM"
       },
       "altegio": {
         "rating": 5,
@@ -210,7 +212,9 @@
             "time": 1697673600
           }
         ],
-        "rating": 5
+        "rating": 4.9,
+        "total": 124,
+        "url": "https://www.google.com/maps/place/?q=place_id:ChIJQ4sFAAXdOkcR3W6ClBBBw6A"
       },
       "altegio": {
         "rating": 5,

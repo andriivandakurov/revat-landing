@@ -45,11 +45,30 @@ async function getComments(locationId) {
 // Reviews are stored per location key in reviews.json, with the Altegio env
 // variable that holds its location ID.
 const LOCATIONS = [
-  { key: 'kulparkivska', envName: 'ALTEGIO_LOCATION_ID_K' },
-  { key: 'zhovkivska', envName: 'ALTEGIO_LOCATION_ID_Z' },
+  { key: 'kulparkivska', envName: 'ALTEGIO_LOCATION_ID_K', googleEnv: 'GOOGLE_PLACE_ID_K' },
+  { key: 'zhovkivska', envName: 'ALTEGIO_LOCATION_ID_Z', googleEnv: 'GOOGLE_PLACE_ID_Z' },
 ];
 
-async function syncLocation(data, { key, envName }) {
+// Google rating and total review count for a Place, from the Places API (New)
+async function getGoogleSummary(placeId) {
+  const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}?languageCode=uk`, {
+    headers: {
+      'X-Goog-Api-Key': env('GOOGLE_PLACES_API_KEY'),
+      'X-Goog-FieldMask': 'rating,userRatingCount',
+    },
+  });
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(`Google Places responded ${res.status}: ${body.error?.message ?? 'unknown error'}`);
+  }
+  return {
+    rating: body.rating,
+    total: body.userRatingCount,
+    url: `https://www.google.com/maps/place/?q=place_id:${placeId}`,
+  };
+}
+
+async function syncLocation(data, { key, envName, googleEnv }) {
   const comments = (await getComments(env(envName))).filter((c) => c.type === LOCATION_REVIEW_TYPE);
 
   const rated = comments.filter((c) => c.rating > 0);
@@ -69,6 +88,10 @@ async function syncLocation(data, { key, envName }) {
     rating: Math.round(average * 10) / 10,
     reviews,
   };
+
+  const google = await getGoogleSummary(env(googleEnv));
+  data.locations[key].google = { ...data.locations[key].google, ...google };
+  console.log(`${key}: Google ${google.rating} from ${google.total} reviews`);
   console.log(`${key}: saved ${reviews.length} reviews (average ${Math.round(average * 10) / 10})`);
 }
 

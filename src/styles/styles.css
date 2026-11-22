@@ -204,6 +204,7 @@ img { max-width: 100%; }
 
 /* ───────── Тренери ───────── */
 .coach-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.coach img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
 .coach { border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; background: var(--black); }
 .coach .photo-ph { aspect-ratio: 4 / 5; }
 .coach-body { padding: 16px 16px 20px; display: flex; flex-direction: column; gap: 8px; }
@@ -305,3 +306,8 @@ img { max-width: 100%; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+
+/* 404 page */
+.not-found { min-height: 70vh; display: flex; align-items: center; }
+.not-found-lead { margin: 20px 0 32px; max-width: 520px; font-size: 18px; color: var(--muted); }
+.not-found-actions { display: flex; flex-wrap: wrap; gap: 14px; }
